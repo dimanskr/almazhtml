@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="ru" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="ru" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="ltr" lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Костромской Алмазный Дом</title>
+    <!--    <base href="http://almazdom.com/" />-->
+    <meta name="description" content="Костромской Алмазный Дом" />
+    <!--<meta property="og:title" content="Костромской Алмазный Дом" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://almazdom.com/" />
+    <meta property="og:image" content="http://almazdom.com/image/catalog/logo-ad-glav.png" />
+    <meta property="og:site_name" content="Костромской Алмазный Дом" />-->
+    <script src="vendor/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendor/owl-carousel/owl.carousel.css" type="text/css" rel="stylesheet" media="screen" />
+    <script src="js/common.js" type="text/javascript"></script>
+    <link href="img/logo-ad.png" rel="icon" />
+    <script src="vendor/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="vendor/jquery/jquery.autopager.js"></script>
+    <script type="text/javascript">
+        function get_cookie(cookie_name) {
+            var results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+            if (results) {
+                return (unescape(results[2]));
+            } else {
+                return null;
+            }
+        }
+
+    </script>
+    <script type="text/javascript" src="/js/bal_language.js"></script>
+    <script type="text/javascript" src="/js/bal_loader.js"></script>
+
+</head>
+
+<body class="common-home">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <ul class="list-inline header-call">
+                        <li><span>+7 (4942) 360-880</span></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <div id="logo">
+                        <img src="img/logo.svg" title="Костромской Алмазный Дом" alt="Костромской Алмазный Дом" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="list-inline header-link text-right">
+                        <li><a href="#" title="Оформление заказа">Оформление заказа</a></li>
+                        <li><a href="#" id="wishlist-total" title="&nbsp;(0)"><i class="fa fa-heart"></i>&nbsp;(0)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse js-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown mega-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Каталог</a>
+                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                <li class="col-sm-3">
+                                    <ul class="list-unstyled text-left">
+                                        <li><a href="shop.html">Все украшения</a></li>
+                                        <li><a href="rings.html">Кольца</a></li>
+                                        <li><a href="#">Серьги</a></li>
+                                        <li><a href="#">Пуссеты</a></li>
+                                        <li><a href="#">Подвески</a></li>
+                                        <li><a href="#">Кресты</a></li>
+                                        <li><a href="#">Колье</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-3">
+                                    <ul class="list-unstyled text-left">
+                                        <li><a href="#">Бриллиант</a></li>
+                                        <li><a href="#">Изумруд</a></li>
+                                        <li><a href="#">Сапфир</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-3">
+                                    <ul class="list-unstyled text-left">
+                                        <li><a href="#">Кольца обручальные</a></li>
+                                        <li><a href="#">Кольца помолвочные</a></li>
+                                        <br>
+                                        <li><a href="#">Православные украшения</a></li>
+                                        <br>
+                                        <li><a href="#">Комплекты</a></li>
+                                        <br>
+                                        <li><a href="#">Коллекция иллюзия</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-3">
+                                    <ul class="list-unstyled">
+                                        <li class="dropdown-header">Магниты</li>
+                                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="item active">
+                                                    <a class="image" href="#"><img src="img/sergi-400x400.jpg" class="img-responsive" alt="product 1"></a>
+                                                    <h4><a href="#">Серьги с бриллиантом из белого золота</a></h4>
+                                                    <p class="price">9 900₽</p>
+                                                </div>
+                                                <div class="item">
+                                                    <a class="image" href="#"><img src="img/sergi-600x600.jpg" class="img-responsive" alt="product 1"></a>
+                                                    <h4><a href="#">Серьги с бриллиантом</a></h4>
+                                                    <p class="price">9 900₽</p>
+                                                </div>
+                                                <div class="item">
+                                                    <a class="image" href="#"><img src="img/sergi-1000x1000.jpg" class="img-responsive" alt="product 1"></a>
+                                                    <h4><a href="#">Серьги с бриллиантом из белого золота</a></h4>
+                                                    <p class="price">9 900₽</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Все предложения</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="#">О бренде</a>
+                        </li>
+                        <li>
+                            <a href="#">Новости</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown"><a href="#" title="Личный кабинет" class="dropdown-toggle" data-toggle="dropdown">Личный кабинет</a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="login.html">Регистрация</a></li>
+                                <li><a href="login.html">Авторизация</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li id="cart">
+                            <button type="button" data-toggle="dropdown" data-loading-text="Загрузка..." class="dropdown-toggle">В корзине <span id="cart-total">0 товар(ов) - 0₽</span></button>
+                            <ul class="dropdown-menu row pull-right">
+                                <li>
+                                    <p class="text-center">В корзине пусто!</p>
+                                </li>
+                            </ul>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="search">
+                <div class="col-sm-12">
+                    <div id="search" class="input-group">
+                        <input type="text" name="search" value="" placeholder="Поиск товара по каталогу" class="form-control input-lg" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script type="text/javascript" language="javascript">
+        <!--
+
+        function validateEmail($email) {
+            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            return emailReg.test($email);
+        }
+
+        $(document).ready(function() {
+            $('#subcribe').click(function() {
+                var email = $('#input-newsletter').val();
+
+                if (email == '') {
+                    var error = 'Введите email адрес!';
+                }
+
+                if (!validateEmail(email)) {
+                    var error = 'Введите правильный email адрес!';
+                }
+
+                if (error != null) {
+                    $('#error-msg').html('');
+                    $('#error-msg').append('<b style=\"color:#de716f\">' + error + '</b>');
+                } else {
+
+                    var dataString = 'email=' + email;
+                    $.ajax({
+                        url: 'index.php?route=common/footer/addToNewsletter',
+                        type: 'post',
+                        data: dataString,
+                        success: function(html) {
+                            $('#error-msg').append('<b style=\"color:#c2d5e6\">' + html + '</b>');
+                        }
+
+                    });
+                }
+
+            })
+        });
+        //-->
+
+    </script>
+    <div class="container">
+        <div id="slideshow0" class="owl-carousel" style="opacity: 1;">
+            <div class="item">
+                <a href="shop.html"><img src="img/banner-1600x632.jpg" alt="111" class="img-responsive" /></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        <!--
+        $('#slideshow0').owlCarousel({
+            items: 6,
+            autoPlay: 3000,
+            singleItem: true,
+            pagination: true
+        });
+        -->
+
+    </script>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="home-about">
+                <h3>О бренде</h3>
+                История Костромского алмазного дома началась в 2005 году в древнем и уютном городе, который славится утонченной работой мастеров с драгоценными металлами. Именно здесь зародилась идея развить собственное производство по изготовлению ювелирных украшений с бриллиантами. Уже в 2010 году компания выходит на оптовый рынок. Ведущие специалисты и художники продолжают разрабатывать качественные, уникальные ювелирные украшения из золота и серебра. <br> Сегодня производство Костромского алмазного дома имеет в ассортименте более тысячи изделий, отличающиеся не только своей изысканностью и неповторимостью, но и выполненные в стиле неустаревающей классики. Изделия с бриллиантами занимают ведущее место в развитии компании. Именно эти украшения являются эталоном качества и универсальностью алмазного дома.
+            </div>
+        </div>
+    </div>
+    <div class="container home-category">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a href="rings.html" class="home-img">
+                    <img src="img/obruchalnie.jpg" class="img-responsive">
+                    <div class="home-img-hover"></div>
+                    <div class="home-img-text">Обручальные<br>кольца</div>
+                </a>
+                <a href="#" class="home-img">
+                    <img src="img/cross.jpg" class="img-responsive">
+                    <div class="home-img-hover"></div>
+                    <div class="home-img-text">Кресты</div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a href="#" class="home-img">
+                    <img src="img/kolie.jpg" class="img-responsive">
+                    <div class="home-img-hover"></div>
+                    <div class="home-img-text">Колье</div>
+                </a>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <a href="rings.html" class="home-img">
+                            <img src="img/pomolvochnie.jpg" class="img-responsive">
+                            <div class="home-img-hover"></div>
+                            <div class="home-img-text">Помолвочные кольца</div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <a href="#" class="home-img">
+                            <img src="img/sergi.jpg" class="img-responsive">
+                            <div class="home-img-hover"></div>
+                            <div class="home-img-text">Серьги</div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <a href="#" class="home-img">
+                            <img src="img/pravoslavnie.jpg" class="img-responsive">
+                            <div class="home-img-hover"></div>
+                            <div class="home-img-text">Православные</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m_news">
+        <div class="container">
+            <div class="row text-left">
+                <h3>Новости</h3>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="m_n_block">
+                        <span>02.07.2019 12:17</span>
+                        <h4><a href="#">Обручальные кольца</a></h4>
+                        <p>Выбор помолвочного и обручального кольца, особенно для представительниц
+                            прекрасного пола,является целой церемонией, ведь это изделие не только
+                            украсит </p>
+                        <a class="m_n_linck" href="#">Читать далее...</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="m_n_block">
+                        <span>24.06.2019 00:36</span>
+                        <h4><a href="#">Православные ювелирные украшения</a></h4>
+                        <p>В ассортименте Костромского алмазного дома представлены православные ювелирные украшения, которые занимают особое место в разработке и реализации данного в</p>
+                        <a class="m_n_linck" href="#">Читать далее...</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="m_n_block">
+                        <span>22.06.2019 23:03</span>
+                        <h4><a href="#">Коллекция «ИЛЛЮЗИЯ» </a></h4>
+                        <p>Украшения коллекции созданы с целью удовлетворить все пожелания покупателя, а именно приобрести бриллиантовые изделия с характеристиками яркости и блеска.</p>
+                        <a class="m_n_linck" href="#">Читать далее...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-featured text-center ">
+        <div class="container">
+            <div class="row">
+                <div class="product-block col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+                    <div class="p-b-image">
+                        <a href="earring.html"><img src="img/sergi-400x400.jpg" alt="Серьги 02-14-5412 из золота с бриллиантами " title="Серьги 02-14-5412 из золота с бриллиантами " class="img-responsive" /></a>
+                        <div class="p-b-weight">3.20г</div>
+                        <div class="p-b-wishlist">
+                            <button type="button" data-toggle="tooltip" title="В закладки" onclick="return false;"><i class="fa fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <h4 class="p-b-name"><a href="earring.html">Серьги 02-14-5412 из золота с бриллиантами </a></h4>
+                    <p class="p-b-price">
+                        15 732₽ </p>
+                </div>
+                <div class="product-block col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+                    <div class="p-b-image">
+                        <a href="ring.html"><img src="img/kolco-400x400.jpg" alt="Кольцо 01-11-0008 из золота с бриллиантом " title="Кольцо 01-11-0008 из золота с бриллиантом " class="img-responsive" /></a>
+                        <div class="p-b-weight">1.40г</div>
+                        <div class="p-b-wishlist">
+                            <button type="button" data-toggle="tooltip" title="В закладки" onclick="return false;"><i class="fa fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <h4 class="p-b-name"><a href="ring.html">Кольцо 01-11-0008 из золота с бриллиантом </a></h4>
+                    <p class="p-b-price">
+                        8 335₽ </p>
+                </div>
+                <div class="product-block col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+                    <div class="p-b-image">
+                        <a href="earring.html"><img src="img/sergi-400x400.jpg" alt="Серьги 02-14-5412 из золота с бриллиантами " title="Серьги 02-14-5412 из золота с бриллиантами " class="img-responsive" /></a>
+                        <div class="p-b-weight">3.20г</div>
+                        <div class="p-b-wishlist">
+                            <button type="button" data-toggle="tooltip" title="В закладки" onclick="return false;"><i class="fa fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <h4 class="p-b-name"><a href="earring.html">Серьги 02-14-5412 из золота с бриллиантами </a></h4>
+                    <p class="p-b-price">
+                        15 732₽ </p>
+                </div>
+                <div class="product-block col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+                    <div class="p-b-image">
+                        <a href="ring.html"><img src="img/kolco-400x400.jpg" alt="Кольцо 01-11-0008 из золота с бриллиантом " title="Кольцо 01-11-0008 из золота с бриллиантом " class="img-responsive" /></a>
+                        <div class="p-b-weight">1.40г</div>
+                        <div class="p-b-wishlist">
+                            <button type="button" data-toggle="tooltip" title="В закладки" onclick="return false;"><i class="fa fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <h4 class="p-b-name"><a href="ring.html">Кольцо 01-11-0008 из золота с бриллиантом </a></h4>
+                    <p class="p-b-price">
+                        8 335₽ </p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="map-block" id="map">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1f7e1a54d41754032d4513ef5cf15d7ad5ce67ec7b47a945568b65a764303e0b&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h5>Контакты</h5>
+                    г. Кострома,<br>
+                    ул. Коммунаров 40,<br>
+                    офис 8<br>
+                    +7 (4942) 360-880<br>
+                    info@almazdom.com<br><br>
+
+                    <div class="map_link">
+                        Посмотреть а карте
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Информация</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Информация о доставке</a></li>
+                        <li><a href="#">Политика Безопасности</a></li>
+                        <li><a href="#">Условия соглашения</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Украшения</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="shop.html">Все украшения</a>
+                        </li>
+                        <li>
+                            <a href="rings.html">Кольца</a>
+                        </li>
+                        <li>
+                            <a href="#">Серьги</a>
+                        </li>
+                        <li>
+                            <a href="#">Пуссеты</a>
+                        </li>
+                        <li>
+                            <a href="#">Подвески</a>
+                        </li>
+                        <li>
+                            <a href="#">Кресты</a>
+                        </li>
+                        <li>
+                            <a href="#">Колье</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Новости</h5>
+                    <div id="myCarousel_novosti" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                Постоянный участник международных ювелирных выставок.
+                            </div>
+                            <div class="item">
+                                Участие в семинарах для представителей ювелирного ритейла.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Будь в курсе последних новостей!</h5>
+                    <input type="text" class="form-control" id="input-newsletter" placeholder="Введите ваш Email" value="" name="newsletter">
+                    <input type="button" id="subcribe" class="btn" value="Подписаться">
+                    <div id="error-msg"></div>
+                </div>
+            </div>
+            <p>Костромской Алмазный Дом &copy; 2019</p>
+        </div>
+    </footer>
+    <script>
+        $(".map_link").on('click', function() {
+            $('.map-block').toggleClass("map-block-on");
+        });
+
+    </script>
+</body>
+
+</html>
