@@ -13,8 +13,8 @@ function mytheme_customize_css()
 
 		<?php $header__footer_bg = ot_get_option( 'header__footer_bg', array() ); ?>
 		#search,
-		.rsrc-top-menu,
 		.navbar-default,
+		.woocommerce-pagination,
 		.navbar-nav > li > .dropdown-menu,
 		.p-p-content,
 		.p-p-tab,

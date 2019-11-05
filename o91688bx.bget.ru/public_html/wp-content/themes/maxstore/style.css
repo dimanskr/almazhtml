@@ -1,12 +1,12 @@
 /*
 Theme Name: MaxStore
-Theme URI: 
+Theme URI:
 Author: Themes4WP
-Author URI: 
-Description: MaxStore is free WooCommerce WordPress Theme. MaxStore is WordPress eCommerce theme based on WooCommerce plugin. This theme will be a perfect choice for online fashion store, sport store, digital shop, men or women store, handbags store, cosmetics shop, luxury jewelry, accessories store and multipurpose online stores. Built with Bootstrap and CSS3 this creative theme is fully responsive design ready for the perfect look on any device. Theme is fully translation ready and includes wishlist support, left or/and right sidebar, footer widget area, custom backgrounds, custom logo, info top bar, search bar, social icons and much more... MaxStore is the fastest WooCommerce theme for WordPress. 
+Author URI:
+Description: MaxStore is free WooCommerce WordPress Theme. MaxStore is WordPress eCommerce theme based on WooCommerce plugin. This theme will be a perfect choice for online fashion store, sport store, digital shop, men or women store, handbags store, cosmetics shop, luxury jewelry, accessories store and multipurpose online stores. Built with Bootstrap and CSS3 this creative theme is fully responsive design ready for the perfect look on any device. Theme is fully translation ready and includes wishlist support, left or/and right sidebar, footer widget area, custom backgrounds, custom logo, info top bar, search bar, social icons and much more... MaxStore is the fastest WooCommerce theme for WordPress.
 Version: 1.5.1
 License: GNU General Public License version 3 or later
-License URI: 
+License URI:
 Tags: one-column, two-columns, three-columns, right-sidebar, full-width-template, left-sidebar, custom-background, custom-header, custom-menu, featured-images, flexible-header, theme-options, translation-ready, footer-widgets, e-commerce
 Text Domain: maxstore
 
@@ -18,7 +18,7 @@ MaxStore is distributed under the terms of the GNU GPL v3.
 
 .rsrc-container {
 	/*  убираем белый фон контейнера содержимого сайта */
-    background-color: #fff;  
+    background-color: #fff;
     padding-left: 30px;
     padding-right: 30px;
     min-width: 320px;
@@ -26,7 +26,7 @@ MaxStore is distributed under the terms of the GNU GPL v3.
 
 .rsrc-header {
 	/*   убираем белый фон логотипа в хэдере содержимого сайта */
-/*     background-color: #fff; 
+/*     background-color: #fff;
  */    display: inline-block;
 }
 .navbar-header {
@@ -41,7 +41,7 @@ MaxStore is distributed under the terms of the GNU GPL v3.
 @media only screen and (max-width: 991px) {
     #site-header {
         text-align: center;
-        display: inherit; 
+        display: inherit;
     }
     .social-section {
         border-left: none !important;
@@ -59,7 +59,7 @@ MaxStore is distributed under the terms of the GNU GPL v3.
 /* расстояние между буквами меню -1 px, зеленый фон меню */
 .rsrc-top-menu {
 /*     letter-spacing: -1px; */
-	background-color: #00d1b2;
+	/* background-color: #00d1b2; */
 	/*     padding: 10px;
     margin-left: -25px;
     margin-right: -25px; */
@@ -89,30 +89,21 @@ MaxStore is distributed under the terms of the GNU GPL v3.
     padding-right: 0;
 }
 #content-footer-section {
+    margin: 0 auto;
    /*  background-color: #F1F1F1; */
-    padding: 10px;
+    /* padding: 10px;
     margin-left: -25px;
     margin-right: -25px;
 	border-radius: 10px;
 	border: 2px solid #00d1b2;
-	font-size: 18px;
+	font-size: 18px; */
 }
-.rsrc-footer-menu {
-
-}
-
 .rsrc-author-credits {
     padding: 20px;
     text-transform: uppercase;
    /*  border-top: 1px solid #D3D3D3; */
 }
 
-.rsrc-footer {
-
-}
-.bypostauthor, .sticky {
-
-}
 /* 5 col function for bootstrap */
 .col-xs-1-5, .col-sm-1-5, .col-md-1-5, .col-lg-1-5 {
     position: relative;
@@ -128,7 +119,7 @@ MaxStore is distributed under the terms of the GNU GPL v3.
     .col-sm-1-5 {
         width: 20%;
         float: left;
-    }				
+    }
 }
 @media (min-width: 992px) {
     .col-md-1-5 {
@@ -154,7 +145,7 @@ MaxStore is distributed under the terms of the GNU GPL v3.
         position: static;
         display: block;
         float: none;
-        padding: 10px 0; 
+        padding: 10px 0;
         background-color: transparent;
         border: none;
         border-radius: 0;
@@ -196,7 +187,7 @@ MaxStore is distributed under the terms of the GNU GPL v3.
  	list-style-type: none;
 }
 
-.navbar-inverse .navbar-nav > li > a, 
+.navbar-inverse .navbar-nav > li > a,
 #menu-menyu-registracii > li > a{
     color: #515151;
 }
@@ -219,7 +210,7 @@ MaxStore is distributed under the terms of the GNU GPL v3.
 }
 ul li li .dropdown-submenu>a:after {
     display: none;
-} 
+}
 thead {
    /*  background-color: #CECECE; */
  /*    color: #fff; */
@@ -237,7 +228,7 @@ img {
     max-width: 100%;
     height: auto;
 	border-radius: 4px;
-	
+
 }
 .featured-thumbnail {
     padding: 0;
@@ -307,7 +298,7 @@ h2.site-desc, h3.site-desc {
     border: none;
 	/* убираем подчеркивание под верхним меню */
   /*   border-bottom: 1px solid #D3D3D3; */
-} 
+}
 /* Text meant only for screen readers */
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
@@ -393,7 +384,7 @@ h2.site-desc, h3.site-desc {
 }
 .rpost:hover .entry-summary{
     display: block;
-} 
+}
 /* Social Links and infobox*/
 .social-section {
     display: inline;
@@ -432,7 +423,7 @@ span.social-section-title {
     padding: 10px 0;
     display: inline-block;
     line-height: 40px;
-} 
+}
 .social-links i.fa-twitter:hover {color: #1BB2E9;}
 .social-links i.fa-facebook:hover {color: #3B5A9B;}
 .social-links i.fa-youtube:hover {color: #ED3F41;}
@@ -468,7 +459,7 @@ span.social-section-title {
 }
 
 
-/* Content */ 
+/* Content */
 .home-header {
     padding: 10px 15px;
 }
@@ -597,7 +588,7 @@ article.featured-article {
 }
 .home-featured .home-header:hover .entry-summary{
     display: block;
-} 
+}
 
 /* Button outline */
 .btn.outline {
@@ -830,12 +821,12 @@ form.woocommerce-product-search, .widget_search, .searchform {
     min-width: 330px;
     right: 0;
     -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out; 
+    transition: .5s ease-in-out;
 }
 .header-cart-inner:hover .site-header-cart {
     display: block;
     opacity: 1;
-} 
+}
 .woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img {
     width: 60px;
     float: left;
@@ -1241,7 +1232,7 @@ a.add_to_wishlist {
     width: 100%;
     top: 30%; */
     background-color: #fff;
-    color: #00d1b2; 
+    color: #00d1b2;
 	border: 1px solid #00d1b2;
 	margin-bottom: 2px;
 /*     opacity: 0;
@@ -1371,7 +1362,7 @@ a.add_to_wishlist {
     margin-left: 10px;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-    border-bottom-color: #00d1b2;   
+    border-bottom-color: #00d1b2;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li a {
     opacity: 0.7;
@@ -1395,7 +1386,7 @@ a.add_to_wishlist {
     padding: 6px;
 }
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
-    padding: 10px; 
+    padding: 10px;
 }
 .woocommerce #reviews #comments ol.commentlist li .comment-text {
     padding: 1em;
@@ -1522,8 +1513,8 @@ input#coupon_code {
 	.grid .product-category,
 	li.product-category,
 	.grid .product {
-		margin: 1% 3% 2.992em 0; 
-		width: 30% !important; 
+		margin: 1% 3% 2.992em 0;
+		width: 30% !important;
 	}
 }
 
@@ -1559,7 +1550,7 @@ input#coupon_code {
 .image-oborudovanie-front h3 > span ,
 .image-upakovka-front h3 > span {
 	color: #000000;
- 	font-size: 13px; 
+ 	font-size: 13px;
 	line-height: 40px;
 	background: rgba(255, 255, 255, 0.8);
 	/* background: #000; */
@@ -1663,7 +1654,7 @@ btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.ac
 }
 
 .button{
-	
+
 }
 
 
@@ -1683,7 +1674,7 @@ ul.yith-wcan-list li .count{
 #ocompanii-text,
 #kontakti-text{
 	margin: 5px 0px 5px 0px;
-} 
+}
 
 /* Отступы и обводка текста на главной, о компании и в описании категорий товаров */
 #main-text p,
@@ -1694,7 +1685,7 @@ ul.yith-wcan-list li .count{
 	margin-bottom: 0px;
 	padding-left: 2px !important;
 	/* text-shadow: white 1px 0px, white 1px 1px, white 0px 1px, white -1px 1px, white -1px 0px, white -1px -1px, white 0px -1px, white 1px -1px; */
-} 
+}
 /* шрифт 16 размера на экранах компьютера Текста главной, о компании и в описании категорий товаров */
 @media only screen and (min-width: 768px){
 	#main-text p,
@@ -1754,7 +1745,7 @@ body{
 		.navbar-inverse .navbar-nav > li {
 		padding-right: 95px;
 	}
-} 
+}
 /* настройки верхнего меню */
 #menu-verkhnee-menyu{
 	/* background: #eff1fe; */
@@ -1777,7 +1768,7 @@ body{
 /* 	background: rgba(218, 222, 247, 0);
 	 border-radius: 2px;
 	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px; 
+	-moz-border-radius: 2px;
 	-webkit-box-shadow: #666 2px 2px 1px;
 	-moz-box-shadow: #666 2px 2px 1px;
 	box-shadow: #666 2px 2px 1px; */
@@ -1815,7 +1806,7 @@ body{
 	-webkit-box-shadow: #666 2px 2px 1px;
 	-moz-box-shadow: #666 2px 2px 1px;
 	box-shadow: #666 2px 2px 1px; */
-} 
+}
 
 /* последний элемент верхнего меню */
 #menu-verkhnee-menyu > li:last-child
@@ -1823,7 +1814,7 @@ body{
 	/* -webkit-box-shadow: #666 0px 0px 0px;
 	-moz-box-shadow: #666 0px 0px 0px;
 	box-shadow: #666 0px 0px 0px; */
-	
+
 	/* закругление справа */
 /* 	border-bottom-right-radius: 3px;
 	border-top-right-radius: 3px; */
@@ -1890,7 +1881,7 @@ li.product-category:hover,
 /* Обтекаем похожие продукты внизу страницы продукта*/
  .related{
 clear: both;
-} 	
+}
 /* Убираем заказать на изображении похожего товара */
 .related  ul li a.button{
 	display: none;
@@ -1904,12 +1895,12 @@ clear: both;
 .list .woocommerce-loop-category__title{
 	 display: none;
 }
-/* Меню атрибутов как меню товаров 
+/* Меню атрибутов как меню товаров
 .woocommerce-widget-layered-nav-list__item  a{
 	text-transform: uppercase;
 	font-weight: 600;
 }
-/* убираем колличество товаров в меню атрибутов 
+/* убираем колличество товаров в меню атрибутов
 .woocommerce-widget-layered-nav-list__item .count{
 	display: none;
 } */
@@ -1949,7 +1940,7 @@ clear: both;
 .product_cat-rings .variations-table #variations .variations td.weight_html,
 .product_cat-ringssave .variations-table #variations .variations th.weight_html,
 .product_cat-ringssave .variations-table #variations .variations td.weight_html, */
-.vartable td.globalcartcol, 
+.vartable td.globalcartcol,
 .product_cat-rings .vartable th.weight_col,
 .product_cat-rings .vartable th.sechenie_col,
 .product_cat-rings .vartable th.vartable_weight,
@@ -1978,8 +1969,8 @@ table.vartable > tbody > tr > th, table.vartable > tbody > tr > td{
 /* фон под главным меню */
 .rsrc-top-menu {
 	/* background-color: #eff1fe; */
-	border-radius: 10px;
-	border: 2px solid #00d1b2;
+	/* border-radius: 10px; */
+	/* border: 2px solid #00d1b2; */
     /* padding: 10px;
     margin-left: -25px;
     margin-right: -25px; */
@@ -2089,7 +2080,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .qtywrap {
     background-color: #fff !important;
-}	
+}
 
 /* свойства кнопки увеличения товара в каталоге */
 /* .quickview{
@@ -2128,10 +2119,17 @@ h2.woocommerce-loop-category__title{
 h2.woocommerce-loop-category__title .count{
 	display: none;
 }
+.woocommerce nav.woocommerce-pagination{
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding-top: 5px;
+}
+
+
 /* увеличиваем кнопки пангинации */
 .woocommerce nav.woocommerce-pagination ul li a,
 .woocommerce nav.woocommerce-pagination ul li span{
-	font-size: 1.5em;
+	/* font-size: 1.5em; */
 }
 /* Возможность пролистывать сайт нажимая на картинку */
 .carousel-slider.owl-drag .owl-item{
@@ -2139,7 +2137,7 @@ h2.woocommerce-loop-category__title .count{
         touch-action: auto !important;
 }
 /* Сужение меню на главной в мобильной версии */
-@media only screen and (max-width: 767px) { 
+@media only screen and (max-width: 767px) {
 	.row {
 		margin-left: 0px;
 		margin-right: 0px;
@@ -2150,9 +2148,9 @@ h2.woocommerce-loop-category__title .count{
 .owl-item>.carousel-slider__product>a[href*="/product-category/oborudovanie/"]{
 	display: none !important;
 }
-/* выравнивание текста по центру в таблицах описания товара */ 
+/* выравнивание текста по центру в таблицах описания товара */
 table.table>tbody>tr>td{
-    text-align: center !important;	 
+    text-align: center !important;
 }
 /* убираем кнопку в вариативной табличке сверху */
 .vartable_globalcart{
@@ -2162,4 +2160,3 @@ table.table>tbody>tr>td{
 @media only screen and (min-width: 992px){
   .grecaptcha-badge {display: none;}
 }
-

@@ -295,7 +295,7 @@ header {
     margin-top: 15px;
     border-radius: 5px;
     background-color: #f7f7f7;
-    background-image: url(../img/bg.jpg);
+    /* background-image: url(../img/bg.jpg); */
     box-shadow: none;
     border: none;
 }

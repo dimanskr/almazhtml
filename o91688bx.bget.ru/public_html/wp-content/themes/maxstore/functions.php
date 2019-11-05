@@ -873,22 +873,6 @@ add_action('woocommerce_email_after_order_table', 'myprefix_cart_extra_info');
  echo '</div>';
  }
 
-/**
- * WooCommerce
- * --------------
- *
- * Display cart total weight on the cart page
- *
-
-add_action('woocommerce_cart_collaterals', 'myprefix_cart_extra_info');
- function myprefix_cart_extra_info() {
- global $woocommerce;
- echo '<div class="cart-extra-info">';
- echo '<p class="total-weight">' . __('Общий вес:', 'woocommerce');
- echo ' ' . $woocommerce->cart->cart_contents_weight . ' г. ';
- echo '</p>';
- echo '</div>';
- } */
 
 add_filter('gettext', 'translate_text');
 add_filter('ngettext', 'translate_text');
@@ -915,22 +899,6 @@ function wc_remove_description_tab( $tabs ) {
 } */
 
 
-
-/* Функция добавления количества в каталоге  */
-function insertcart_wc_loop_add_to_cart_scripts() {
- if ( is_shop() || is_product_category() || is_product_tag() || is_product() ) : ?>
-
-<script>
- jQuery( document ).ready( function( $ ) {
- $( document ).on( 'change', '.quantity .qty', function() {
- $( this ).parent( '.quantity' ).next( '.add_to_cart_button' ).attr( 'data-quantity', $( this ).val() );
- });
- });
-</script>
-
- <?php endif;
-}
-add_action( 'wp_footer', 'insertcart_wc_loop_add_to_cart_scripts' );
 
 /* Изменяем размер изображений в корзине */
 /* add_image_size( 'cart_image_size', 150, 150, false );
@@ -1045,9 +1013,9 @@ echo '<a target="_blank" href="' . get_the_permalink() . '" class="woocommerce-L
 } */
 
 /* Добавление кнопки просмотра товара на товаре каталога */
-add_action( 'woocommerce_after_shop_loop_item', 'add_my_morebutton', 5);
-function add_my_morebutton( ) {
-echo '<a href="' . get_the_post_thumbnail_url( $product_id, 'shop_single' ) . '"  rel="lightbox" class="quickview button">Изображение</a>'; }
+// add_action( 'woocommerce_after_shop_loop_item', 'add_my_morebutton', 5);
+// function add_my_morebutton( ) {
+// echo '<a href="' . get_the_post_thumbnail_url( $product_id, 'shop_single' ) . '"  rel="lightbox" class="quickview button">Изображение</a>'; }
 
 /* заключаем блок описаний товара в каталоге  в обертку*/
 // add_action( 'woocommerce_before_shop_loop_item_title', 'div_start_loop_product_block', 25 );
@@ -1089,21 +1057,21 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
     }
 } */
 // меняем переход по ссылке к товару на изображение товара в категории
-add_action ('woocommerce_before_shop_loop_item', 'custom_loop_product_link_open', 1);
-function custom_loop_product_link_open(){
-    // For product category archives pages only
-    if(is_product_category()){
-        // Remove default image link
-        remove_action ('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
-        // Add custom image link function
-        add_action ('woocommerce_before_shop_loop_item', 'change_loop_product_link_open', 10);
-    }
-}
-function change_loop_product_link_open(){
-    global $product; // Get the WC_Product object
+// add_action ('woocommerce_before_shop_loop_item', 'custom_loop_product_link_open', 1);
+// function custom_loop_product_link_open(){
+//     // For product category archives pages only
+//     if(is_product_category()){
+//         // Remove default image link
+//         remove_action ('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
+//         // Add custom image link function
+//         add_action ('woocommerce_before_shop_loop_item', 'change_loop_product_link_open', 10);
+//     }
+// }
+// function change_loop_product_link_open(){
+//     global $product; // Get the WC_Product object
 
-    echo '<a href="' . get_the_post_thumbnail_url( $product->get_id(), 'full' )  . '" rel="lightbox" class="woocommerce-LoopProduct-link">';
-}
+//     echo '<a href="' . get_the_post_thumbnail_url( $product->get_id(), 'full' )  . '" rel="lightbox" class="woocommerce-LoopProduct-link">';
+// }
 
 // скрыть цену товара так как она нам не нужна
 add_filter( 'woocommerce_get_price_html', function( $price ) {
