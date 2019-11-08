@@ -452,9 +452,9 @@ span.social-section-title {
     border-bottom: 1px solid #D3D3D3;
 }
 .top-infobox {
-    font-size: 20px;
+    /* font-size: 20px;
     font-weight: bold;
-    color: #000;
+    color: #000; */
     padding: 7px;
 }
 
@@ -500,7 +500,7 @@ span.social-section-title {
    /*  text-transform: uppercase; */
     text-decoration: none;
     font-weight: 500;
-    color: #000;
+    /* color: #000; */
 }
 
 /* изменяем формат заголовка h1 */
@@ -794,10 +794,10 @@ form.woocommerce-product-search, .widget_search, .searchform {
     position: relative;
     margin-top: 30px;
     text-transform: uppercase;
-    color: #000;
+    /* color: #000; */
 }
 .header-cart a, .header-login a{
-    color: #000;
+    /* color: #000; */
 }
 .header-login {
     margin-top: 12px;
@@ -853,10 +853,10 @@ form.woocommerce-product-search, .widget_search, .searchform {
     right: -11px;
     border-radius: 60%;
     padding: 2px 5px;
-    color: black;
+    /* color: black; */
 	/* убираем фон в кружке кнопки колличества товаров корзины*/
     /*  background-color: white; */
-    border: 1px solid #000;
+    border: 1px solid #777;
     top: -5px;
 }
 .top-wishlist .count {
@@ -1101,12 +1101,12 @@ ul.products {
 .woocommerce ul.products li.product h3,
 .woocommerce-loop-category__title,
 .woocommerce-loop-product__title{
-    padding: 0 5px 5px 5px;
+    /* padding: 0 5px 5px 5px;
     width: 100%;
     text-align: center;
     text-transform: uppercase;
     color: black;
-    font-weight: bold;
+    font-weight: bold; */
 }
 /* убирал паддинг и бордер  */
 .woocommerce ul.products li.product {
@@ -1196,7 +1196,7 @@ a.add_to_wishlist {
     padding: 0px 10px;
 }
 .add-to-wishlist-custom:hover{
-    background-color: #00d1b2;
+    /* background-color: #00d1b2; */
     color: #fff;
 }
 .add-to-wishlist-custom .yith-wcwl-add-button a:before{
@@ -1231,28 +1231,28 @@ a.add_to_wishlist {
     left: 100%;
     width: 100%;
     top: 30%; */
-    background-color: #fff;
-    color: #00d1b2;
-	border: 1px solid #00d1b2;
-	margin-bottom: 2px;
+    /* background-color: #fff; */
+    /* color: #00d1b2; */
+	/* border: 1px solid #00d1b2; */
+	/* margin-bottom: 2px; */
 /*     opacity: 0;
     -webkit-transition: .5s ease-in-out;
     transition: .5s ease-in-out; */
 }
 .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce a.button.alt.disabled, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled[disabled], .woocommerce button.button.alt.disabled, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled[disabled], .woocommerce input.button.alt.disabled, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled[disabled] {
-    background-color: #00d1b2;
-    color: #fff;
+    /* background-color: #00d1b2; */
+    /* color: #fff; */
 }
 .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
-    background-color: #00d1b2;
-    color: #fff;
+    /* background-color: #00d1b2; */
+    /* color: #fff; */
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
 }
 .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce ul.products li.product .button:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
   /*   background-color: #000; */
-	background-color: #00d1b2;
-    color: #fff;
+	/* background-color: #00d1b2; */
+    /* color: #fff; */
 }
 /* Иконки на кнопках с сайта fontawesome.ru/icon */
 .woocommerce ul.products li.product .button.product_type_simple:before {
@@ -1284,13 +1284,13 @@ a.add_to_wishlist {
     display: inline-block;
     width: 100%;
     text-align: center;
-    color: #fff;
-    background-color: #000;
+    /* color: #fff;
+    background-color: #000; */
     padding: 5px;
     font-weight: bold;
 }
 .woocommerce a.added_to_cart:hover {
-    background-color: #00d1b2;
+    /* background-color: #00d1b2; */
 }
 .woocommerce td.product-name dl.variation dd, .woocommerce ul.product_list_widget li dl dd {
     margin-bottom: 0px;
@@ -1314,7 +1314,7 @@ a.add_to_wishlist {
     font-size: 28px;
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
-    border-radius: 32px;
+    /* border-radius: 32px; */
 }
 .woocommerce div.product form.cart .variations td.label {
     padding: 8px;
@@ -1362,7 +1362,7 @@ a.add_to_wishlist {
     margin-left: 10px;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-    border-bottom-color: #00d1b2;
+    /* border-bottom-color: #00d1b2; */
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li a {
     opacity: 0.7;
@@ -1423,7 +1423,7 @@ ul.children {
     padding-left: 10px;
 }
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, .woocommerce .widget_price_filter .ui-slider .ui-slider-range {
-    background-color: #00d1b2;
+    /* background-color: #00d1b2; */
 }
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
     background-color: #000;
@@ -1450,7 +1450,7 @@ li.woocommerce-MyAccount-navigation-link:hover {
     background-color: rgba(169, 169, 169, 0.20);
 }
 li.woocommerce-MyAccount-navigation-link.is-active {
-    background-color: #00d1b2;
+    /* background-color: #00d1b2; */
     color: #ffffff;
 }
 li.woocommerce-MyAccount-navigation-link.is-active a {
@@ -1599,43 +1599,43 @@ input#coupon_code {
 }
 /* (Синие) цвета сайта*/
 a, .pagination > li > a, .pagination > li > span, .top-wishlist a {
-    color: #00d1b2;
+    /* color: #00d1b2; */
 }
 .related-header, blockquote, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-    border-color: #00d1b2;
+    /* border-color: #00d1b2; */
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #00d1b2;
+    /* color: #00d1b2; */
 }
 .widget_search #searchform #searchsubmit, .woocommerce-product-search button[type="submit"], .woocommerce ul.products li.product .onsale, .woocommerce span.onsale, .top-area .onsale, li.woocommerce-MyAccount-navigation-link.is-active, .navigation.pagination {
-    background-color: #00d1b2;
+    /* background-color: #00d1b2; */
 }
 .woocommerce button.button.alt:disabled, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
-    background-color: #00d1b2;
+    /* background-color: #00d1b2; */
 }
 .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce a.button.alt.disabled, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled[disabled], .woocommerce button.button.alt.disabled, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled[disabled], .woocommerce input.button.alt.disabled, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled[disabled] {
-    background-color: #00d1b2;
+    /* background-color: #00d1b2; */
 }
 .woocommerce a.added_to_cart:hover, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, .woocommerce .widget_price_filter .ui-slider .ui-slider-range {
-    background-color: #00d1b2;
+    /* background-color: #00d1b2; */
 }
 .woocommerce ul.products li.product .button, .add-to-wishlist-custom:hover, #back-top span, .footer-pagination {
    /*  background-color: #00d1b2; */
 }
 .btn-primary.outline {
-    border: 2px solid #00d1b2;
-    color: #00d1b2;
+    /* border: 2px solid #00d1b2; */
+    /* color: #00d1b2; */
 }
 .btn-info, .comment-respond #submit, #searchform #searchsubmit, .btn-primary.outline:hover, .btn-primary.outline a:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary, .topfirst-img:hover .btn-primary.outline {
-    border-color: #00d1b2;
-    background-color: #00d1b2;
+    /* border-color: #00d1b2; */
+    /* background-color: #00d1b2; */
 }
 .xo10-accordion-list-holder .accordion-btn {
-  color: #00d1b2;
+  /* color: #00d1b2; */
 }
 btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info, .comment-respond #submit:hover, .comment-respond #submit:focus, .comment-respond #submit.focus, .comment-respond #submit:active, .comment-respond #submit.active, .open > .dropdown-toggle.comment-respond #submit, #searchform #searchsubmit:hover, #searchform #searchsubmit:focus, #searchform #searchsubmit.focus, #searchform #searchsubmit:active, #searchform #searchsubmit.active, .open > .dropdown-toggle#searchform #searchsubmit {
-    border-color: #009982;
-    background-color: #009982;
+    /* border-color: #009982; */
+    /* background-color: #009982; */
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
     border-bottom-color: #00d1b2;
@@ -1647,10 +1647,10 @@ btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.ac
     color: #fff;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, a:hover, a:focus {
-    color: #009982;
+    /* color: #009982; */
 }
 .btn{
-	background-color: #00d1b2;
+	/* background-color: #00d1b2; */
 }
 
 .button{
@@ -1673,13 +1673,13 @@ ul.yith-wcan-list li .count{
 #main-text,
 #ocompanii-text,
 #kontakti-text{
-	margin: 5px 0px 5px 0px;
+	/* margin: 5px 0px 5px 0px; */
 }
 
 /* Отступы и обводка текста на главной, о компании и в описании категорий товаров */
 #main-text p,
 #ocompanii-text p,
-#kontakti-text p,
+/* #kontakti-text p, */
 .woocommerce .term-description p{
 /* 	text-indent: 20px; */
 	margin-bottom: 0px;
@@ -1692,7 +1692,7 @@ ul.yith-wcan-list li .count{
 	#ocompanii-text p,
 	#kontakti-text p,
 	.woocommerce .term-description p{
-		font-size: 16px;
+		/* font-size: 16px; */
 	}
 }
 /* Черный цвет текста */
@@ -1987,7 +1987,7 @@ table.vartable > tbody > tr > th, table.vartable > tbody > tr > td{
 #bellows_navigation_widget-2,
 #bellows_navigation_widget-3{
 	border-radius: 10px;
-	border: 2px solid #00d1b2;
+	/* border: 2px solid #00d1b2; */
 }
 
 /* меню материалов упаковки и типов оборудования стилизуем как меню товаров */
@@ -2036,7 +2036,7 @@ span.bellows-target-description{
 }
 #menu-verhnee-menju > li :hover{
 	/* color: #00d1b2; */
-	color: #009982;
+	/* color: #009982; */
 	background-color: #fff;
 }
 /* убираем отступ сверху кнопки Заказать */
@@ -2075,7 +2075,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* размеры инпутов с + и - для простых товаров */
 .minus, .plus, .minusqty, .plusqty{
 	border-radius: 3px;
-	border: 1px solid #00d1b2;
+	/* border: 1px solid #00d1b2; */
 	background-color: #fff;
 }
 .qtywrap {
@@ -2113,7 +2113,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 /* Изменяем стиль слайдов категорий на главной */
 h2.woocommerce-loop-category__title{
-	color: #00d1b2;
+	/* color: #00d1b2; */
 	font-size: 14px;
 }
 h2.woocommerce-loop-category__title .count{
@@ -2159,4 +2159,13 @@ table.table>tbody>tr>td{
 /* убираем отображение recaptcha, правила политики конфиденциальности в футере сайта */
 @media only screen and (min-width: 992px){
   .grecaptcha-badge {display: none;}
+}
+
+#nav_menu-3 li{
+    list-style-type: none;
+}
+
+form.login,
+form.register{
+    border: 0px !important;
 }

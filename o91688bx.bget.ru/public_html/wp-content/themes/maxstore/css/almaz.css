@@ -148,9 +148,10 @@ label {
 }
 
 /* btn  */
-.btn {
-    color: #fff;
-    background-color: #777;
+.btn,
+.button {
+    color: #fff !important;
+    background-color: #777 !important;
     border: none;
     border-radius: 5px;
     padding: 0 30px;
@@ -166,9 +167,12 @@ label {
 
 .btn:hover,
 .btn:after,
-.btn:focus {
-    color: #fff;
-    background-color: #444;
+.btn:focus,
+.button:hover,
+.button:after,
+.button:focus {
+    color: #fff !important;
+    background-color: #444 !important;
 }
 
 .btn-primary.disabled,
@@ -1031,6 +1035,10 @@ input[type=radio]:checked + span img {
 }
 
 /* slideshow */
+.owl-item{
+    width: 100%;
+}
+
 .owl-wrapper-outer {
     border: none !important;
     -webkit-border-radius: 5px !important;
@@ -1195,13 +1203,20 @@ footer .btn {
 }
 
 /* home */
-.home-about {
+.home-about,
+.kontakti-text {
     width: 75%;
     margin: 0 auto;
     text-align: center;
 }
+.map {
+    margin: 0 auto;
+    text-align: center;
+}
 
-.home-about h3 {
+.home-about h3,
+.kontakti-text h3,
+.map h3 {
     font-size: 32px;
     margin: 0 auto;
     padding-top: 30px;

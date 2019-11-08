@@ -15,6 +15,9 @@ function mytheme_customize_css()
 		#search,
 		.navbar-default,
 		.woocommerce-pagination,
+		#site-footer,
+		.woocommerce-form-login,
+		.woocommerce-form-register,
 		.navbar-nav > li > .dropdown-menu,
 		.p-p-content,
 		.p-p-tab,
@@ -23,8 +26,6 @@ function mytheme_customize_css()
 		.bal-box-next a,
 		.search-bg,
 		.m_news,
-		#site-footer,
-		.well,
 		.checkout-product .panel-default > .panel-heading,
 		.checkout-product .panel-body
 		{

@@ -662,7 +662,7 @@ function wooc_validate_extra_register_fields( $username, $email, $validation_err
 	}
 
 	if ( isset( $_POST['billing_company'] ) && empty( $_POST['billing_company'] ) ) {
-        $validation_errors->add( 'billing_company_error', __( 'Введите нназвание компании!', 'woocommerce' ) );
+        $validation_errors->add( 'billing_company_error', __( 'Введите название компании!', 'woocommerce' ) );
     }
 
     if ( isset( $_POST['billing_phone'] ) && empty( $_POST['billing_phone'] ) ) {
