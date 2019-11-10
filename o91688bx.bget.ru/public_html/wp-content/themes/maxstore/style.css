@@ -24,6 +24,10 @@ MaxStore is distributed under the terms of the GNU GPL v3.
     min-width: 320px;
 }
 
+.container{
+
+}
+
 .rsrc-header {
 	/*   убираем белый фон логотипа в хэдере содержимого сайта */
 /*     background-color: #fff;
@@ -2136,13 +2140,7 @@ h2.woocommerce-loop-category__title .count{
 	    -ms-touch-action: auto !important;
         touch-action: auto !important;
 }
-/* Сужение меню на главной в мобильной версии */
-@media only screen and (max-width: 767px) {
-	.row {
-		margin-left: 0px;
-		margin-right: 0px;
-	}
-}
+
 /* скрываем упаковку и оборудование в слайдере внизу */
 .owl-item>.carousel-slider__product>a[href*="/product-category/upakovka/"] ,
 .owl-item>.carousel-slider__product>a[href*="/product-category/oborudovanie/"]{
