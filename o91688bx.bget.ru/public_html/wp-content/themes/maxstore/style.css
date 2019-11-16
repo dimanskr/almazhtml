@@ -1259,7 +1259,7 @@ a.add_to_wishlist {
     /* color: #fff; */
 }
 /* Иконки на кнопках с сайта fontawesome.ru/icon */
-.woocommerce ul.products li.product .button.product_type_simple:before {
+/* .woocommerce ul.products li.product .button.product_type_simple:before {
     font-family: 'FontAwesome';
     content: "\f07a";
     margin-right: 3px;
@@ -1268,7 +1268,7 @@ a.add_to_wishlist {
     font-family: 'FontAwesome';
     content: "\f0ce";
 	margin-right: 3px;
-}
+} */
 .button.quickview:before {
     font-family: 'FontAwesome';
     content: "\f00e";
@@ -1837,21 +1837,21 @@ body{
 }
 
 /* Увеличение категорий товаров и товаров и тень при наведении и белый фон  */
-.grid .product-category,
-li.product-category,
-.grid .product{
-	transition: 0.4s;
-	background-color: #fff;
+.grid .product-category img,
+li.product-category img,
+.grid .product img{
+	transition: 0.3s;
+	/* background-color: #fff; */
 }
-.grid .product-category:hover,
-li.product-category:hover,
-.grid .product:hover{
+.grid .product-category:hover img,
+li.product-category:hover img,
+.grid .product:hover image{
 	transform: scale(1.05);
-	transition: 0.4s;
-	transition-delay: 0.1s;
+	transition: 0.3s;
+	/* transition-delay: 0.1s;
 	-webkit-box-shadow: #666 1px 1px 2px;
 	-moz-box-shadow: #666 1px 1px 2px;
-	box-shadow: #666 1px 1px 2px;
+	box-shadow: #666 1px 1px 2px; */
 }
 
 /* Увеличение слайдера */
@@ -2107,7 +2107,8 @@ input[type=number]::-webkit-outer-spin-button {
 /* Появление кнопок товара при наведении в каталоге */
 .grid .product{
 	position: relative;
-	padding-bottom: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 1em;
 }
 .grid .loop_product{
  	opacity: 0;

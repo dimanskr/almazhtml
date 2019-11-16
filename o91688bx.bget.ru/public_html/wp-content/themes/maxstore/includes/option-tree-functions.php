@@ -18,6 +18,7 @@ function mytheme_customize_css()
 		#site-footer,
 		.woocommerce-form-login,
 		.woocommerce-form-register,
+		.lmp_load_more_button a,
 		.navbar-nav > li > .dropdown-menu,
 		.p-p-content,
 		.p-p-tab,

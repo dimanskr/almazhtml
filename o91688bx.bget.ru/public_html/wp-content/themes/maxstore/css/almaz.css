@@ -808,6 +808,7 @@ input[type=radio]:checked + span img {
     position: absolute;
     right: 0px;
     bottom: 10px;
+    color: #777;
 }
 
 .p-b-sku {
@@ -853,7 +854,7 @@ input[type=radio]:checked + span img {
     transition: ease-in-out all .3s;
 }
 
-.product-block:hover img {
+.product:hover img {
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
     -o-transform: scale(1.05);
@@ -990,11 +991,18 @@ input[type=radio]:checked + span img {
 .bal-box-next a {
     background-color: #f7f7f7;
   /*  background-image: url(img/bg.jpg); */
-    border-radius: 5px;
-    padding: 15px;
-    display: block;
-    text-align: center;
-    margin-bottom: 15px;
+    border-radius: 5px !important;
+    padding: 15px !important;
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+
+.lmp_button,
+.lmp_button:hover{
+    background-color: transparent !important;
 }
 
 .bal-loading {

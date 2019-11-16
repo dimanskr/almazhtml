@@ -370,9 +370,9 @@ if ( !function_exists( 'maxstore_social_links' ) ) :
 			'twp_social_rss'		 => 'rss',
 		);
 		?>
-		<div class="social-links">
-			<ul>
-				<?php
+<div class="social-links">
+	<ul>
+		<?php
 				$i					 = 0;
 				$twp_links_output	 = '';
 				foreach ( $twp_social_links as $key => $value ) {
@@ -385,9 +385,9 @@ if ( !function_exists( 'maxstore_social_links' ) ) :
 				}
 				echo $twp_links_output;
 				?>
-			</ul>
-		</div><!-- .social-links -->
-		<?php
+	</ul>
+</div><!-- .social-links -->
+<?php
 	}
 
 endif;
@@ -405,10 +405,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 		function maxstore_cart_link() {
 			if ( get_theme_mod( 'cart-top-icon', 1 ) == 1 ) {
 				?>
-				<a class="cart-contents text-right" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'maxstore' ); ?>">
-					<i class="fa fa-shopping-cart"><span class="count"><?php echo absint( WC()->cart->get_cart_contents_count() ); ?></span></i><span class="amount-title hidden-sm hidden-xs"><?php echo esc_html_e( 'Cart ', 'maxstore' ); ?></span><span class="amount-cart"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
-				</a>
-				<?php
+<a class="cart-contents text-right" href="<?php echo esc_url( wc_get_cart_url() ); ?>"
+	title="<?php esc_attr_e( 'View your shopping cart', 'maxstore' ); ?>">
+	<i class="fa fa-shopping-cart"><span
+			class="count"><?php echo absint( WC()->cart->get_cart_contents_count() ); ?></span></i><span
+		class="amount-title hidden-sm hidden-xs"><?php echo esc_html_e( 'Cart ', 'maxstore' ); ?></span><span
+		class="amount-cart"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
+</a>
+<?php
 			}
 		}
 
@@ -419,12 +423,15 @@ if ( class_exists( 'WooCommerce' ) ) {
 			if ( function_exists( 'YITH_WCWL' ) ) {
 				$wishlist_url = YITH_WCWL()->get_wishlist_url();
 				?>
-				<div class="top-wishlist text-right">
-					<a href="<?php echo esc_url( $wishlist_url ); ?>" title="<?php esc_attr_e( 'Wishlist', 'maxstore' ); ?>" data-toggle="tooltip" data-placement="top">
-						<div class="fa fa-heart"><div class="count"><span><?php echo absint( yith_wcwl_count_products() ); ?></span></div></div>
-					</a>
-				</div>
-				<?php
+<div class="top-wishlist text-right">
+	<a href="<?php echo esc_url( $wishlist_url ); ?>" title="<?php esc_attr_e( 'Wishlist', 'maxstore' ); ?>"
+		data-toggle="tooltip" data-placement="top">
+		<div class="fa fa-heart">
+			<div class="count"><span><?php echo absint( yith_wcwl_count_products() ); ?></span></div>
+		</div>
+	</a>
+</div>
+<?php
 			}
 		}
 
@@ -437,15 +444,15 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 		function maxstore_header_cart() {
 			?>
-			<div class="header-cart-inner">
-				<?php maxstore_cart_link(); ?>
-				<ul class="site-header-cart menu list-unstyled">
-					<li>
-						<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-					</li>
-				</ul>
-			</div>
-			<?php
+<div class="header-cart-inner">
+	<?php maxstore_cart_link(); ?>
+	<ul class="site-header-cart menu list-unstyled">
+		<li>
+			<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+		</li>
+	</ul>
+</div>
+<?php
 			if ( get_theme_mod( 'wishlist-top-icon', 0 ) != 0 ) {
 				maxstore_head_wishlist();
 			}
@@ -499,14 +506,23 @@ if ( class_exists( 'WooCommerce' ) ) {
 			$id				 = $product->get_id();
 			$wishlist_url	 = YITH_WCWL()->get_wishlist_url();
 			?>
-			<div class="add-to-wishlist-custom add-to-wishlist-<?php echo esc_attr( $id ); ?>">
-				<div class="yith-wcwl-add-button show" style="display:block"> <a href="<?php echo esc_url( $url ); ?>" rel="nofollow" data-product-id="<?php echo esc_attr( $id ); ?>" data-product-type="simple" class="add_to_wishlist"><?php _e( 'Add to Wishlist', 'maxstore' ); ?></a><img src="<?php echo get_template_directory_uri() . '/img/loading.gif'; ?>" class="ajax-loading" alt="loading" width="16" height="16"></div>
-				<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"> <span class="feedback"><?php esc_html_e( 'Added!', 'maxstore' ); ?></span> <a href="<?php echo esc_url( $wishlist_url ); ?>"><?php esc_html_e( 'View Wishlist', 'maxstore' ); ?></a></div>
-				<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"> <span class="feedback"><?php esc_html_e( 'The product is already in the wishlist!', 'maxstore' ); ?></span> <a href="<?php echo esc_url( $wishlist_url ); ?>"><?php esc_html_e( 'Browse Wishlist', 'maxstore' ); ?></a></div>
-				<div class="clear"></div>
-				<div class="yith-wcwl-wishlistaddresponse"></div>
-			</div>
-			<?php
+<div class="add-to-wishlist-custom add-to-wishlist-<?php echo esc_attr( $id ); ?>">
+	<div class="yith-wcwl-add-button show" style="display:block"> <a href="<?php echo esc_url( $url ); ?>"
+			rel="nofollow" data-product-id="<?php echo esc_attr( $id ); ?>" data-product-type="simple"
+			class="add_to_wishlist"><?php _e( 'Add to Wishlist', 'maxstore' ); ?></a><img
+			src="<?php echo get_template_directory_uri() . '/img/loading.gif'; ?>" class="ajax-loading" alt="loading"
+			width="16" height="16"></div>
+	<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"> <span
+			class="feedback"><?php esc_html_e( 'Added!', 'maxstore' ); ?></span> <a
+			href="<?php echo esc_url( $wishlist_url ); ?>"><?php esc_html_e( 'View Wishlist', 'maxstore' ); ?></a></div>
+	<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"> <span
+			class="feedback"><?php esc_html_e( 'The product is already in the wishlist!', 'maxstore' ); ?></span> <a
+			href="<?php echo esc_url( $wishlist_url ); ?>"><?php esc_html_e( 'Browse Wishlist', 'maxstore' ); ?></a>
+	</div>
+	<div class="clear"></div>
+	<div class="yith-wcwl-wishlistaddresponse"></div>
+</div>
+<?php
 		}
 	}
 
@@ -618,27 +634,37 @@ function custom_woocommerce_catalog_orderby( $orderby ) {
 function wooc_extra_register_fields() {
     ?>
 
-    <p class="form-row form-row-wide">
-    <label for="reg_billing_first_name"><?php _e( 'Контактное лицо', 'woocommerce' ); ?> <span class="required">*</span></label>
-    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_first_name" id="reg_billing_first_name" value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" />
-    </p>
+<p class="form-row form-row-wide">
+	<label for="reg_billing_first_name"><?php _e( 'Контактное лицо', 'woocommerce' ); ?> <span
+			class="required">*</span></label>
+	<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_first_name"
+		id="reg_billing_first_name"
+		value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" />
+</p>
 
-	<p class="form-row form-row-wide">
-    <label for="reg_billing_address_1"><?php _e( 'Регион или город', 'woocommerce' ); ?> <span class="required">*</span></label>
-    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_address_1" id="reg_billing_address_1" value="<?php if ( ! empty( $_POST['billing_address_1'] ) ) esc_attr_e( $_POST['billing_address_1'] ); ?>" />
-    </p>
+<p class="form-row form-row-wide">
+	<label for="reg_billing_address_1"><?php _e( 'Регион или город', 'woocommerce' ); ?> <span
+			class="required">*</span></label>
+	<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_address_1"
+		id="reg_billing_address_1"
+		value="<?php if ( ! empty( $_POST['billing_address_1'] ) ) esc_attr_e( $_POST['billing_address_1'] ); ?>" />
+</p>
 
-	<p class="form-row form-row-wide">
-    <label for="reg_billing_company"><?php _e( 'Компания', 'woocommerce' ); ?> <span class="required">*</span></label>
-    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_company" id="reg_billing_company" value="<?php if ( ! empty( $_POST['billing_company'] ) ) esc_attr_e( $_POST['billing_company'] ); ?>" />
-    </p>
+<p class="form-row form-row-wide">
+	<label for="reg_billing_company"><?php _e( 'Компания', 'woocommerce' ); ?> <span class="required">*</span></label>
+	<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_company"
+		id="reg_billing_company"
+		value="<?php if ( ! empty( $_POST['billing_company'] ) ) esc_attr_e( $_POST['billing_company'] ); ?>" />
+</p>
 
-    <p class="form-row form-row-wide">
-    <label for="reg_billing_phone"><?php _e( 'Телефон', 'woocommerce' ); ?> <span class="required">*</span></label>
-    <input type="tel" class="woocommerce-Input woocommerce-Input--phone input-text" name="billing_phone" id="reg_billing_phone" value="<?php if ( ! empty( $_POST['billing_phone'] ) ) esc_attr_e( $_POST['billing_phone'] ); ?>" />
-    </p>
+<p class="form-row form-row-wide">
+	<label for="reg_billing_phone"><?php _e( 'Телефон', 'woocommerce' ); ?> <span class="required">*</span></label>
+	<input type="tel" class="woocommerce-Input woocommerce-Input--phone input-text" name="billing_phone"
+		id="reg_billing_phone"
+		value="<?php if ( ! empty( $_POST['billing_phone'] ) ) esc_attr_e( $_POST['billing_phone'] ); ?>" />
+</p>
 
-    <?php
+<?php
 }
 add_action( 'woocommerce_register_form_start', 'wooc_extra_register_fields' );
 
@@ -962,27 +988,27 @@ echo '<div class="cw_quantity_select quantity" style="' . $defaults['style'] . '
 // Скрипт кнопок - и + добавления товара
 function kia_add_script_to_footer(){
     if( ! is_admin() ) { ?>
-    <script>
- jQuery(document).ready(function($){
+<script>
+	jQuery(document).ready(function ($) {
 
-    $(document).on('click', '.plus', function(e) { // replace '.quantity' with document (without single quote)
-        $input = $(this).prev('input.qty');
-        var val = parseInt($input.val());
-        var step = $input.attr('step');
-        step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
-        $input.val( val + step ).change();
-    });
-    $(document).on('click', '.minus',  // replace '.quantity' with document (without single quote)
-        function(e) {
-        $input = $(this).next('input.qty');
-        var val = parseInt($input.val());
-        var step = $input.attr('step');
-        step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
-        if (val > 0) {
-            $input.val( val - step ).change();
-        }
-    });
- });
+		$(document).on('click', '.plus', function (e) { // replace '.quantity' with document (without single quote)
+			$input = $(this).prev('input.qty');
+			var val = parseInt($input.val());
+			var step = $input.attr('step');
+			step = 'undefined' !== typeof (step) ? parseInt(step) : 1;
+			$input.val(val + step).change();
+		});
+		$(document).on('click', '.minus', // replace '.quantity' with document (without single quote)
+			function (e) {
+				$input = $(this).next('input.qty');
+				var val = parseInt($input.val());
+				var step = $input.attr('step');
+				step = 'undefined' !== typeof (step) ? parseInt(step) : 1;
+				if (val > 0) {
+					$input.val(val - step).change();
+				}
+			});
+	});
 </script>
 <?php }
 }
@@ -1019,14 +1045,14 @@ echo '<a target="_blank" href="' . get_the_permalink() . '" class="woocommerce-L
 
 /* заключаем блок описаний товара в каталоге  в обертку*/
 // add_action( 'woocommerce_before_shop_loop_item_title', 'div_start_loop_product_block', 25 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'div_start_loop_product_block', 15 );
-function div_start_loop_product_block() {
-    echo '<div class="loop_product">';
-}
-add_action( 'woocommerce_after_shop_loop_item', 'div_end_loop_product_block', 25 );
-function div_end_loop_product_block() {
-    echo '</div><!-- /loop_product-->';
-}
+// add_action( 'woocommerce_after_shop_loop_item_title', 'div_start_loop_product_block', 15 );
+// function div_start_loop_product_block() {
+//     echo '<div class="loop_product">';
+// }
+// add_action( 'woocommerce_after_shop_loop_item', 'div_end_loop_product_block', 25 );
+// function div_end_loop_product_block() {
+//     echo '</div><!-- /loop_product-->';
+// }
 /* удаляем похожие товары на странице товара */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
@@ -1035,7 +1061,7 @@ if ( ! defined( 'WC_MAX_LINKED_VARIATIONS' ) ) {
     define( 'WC_MAX_LINKED_VARIATIONS', 90);
 }
 /* заключаем картинку в обертку */
-/*
+
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 
@@ -1046,16 +1072,20 @@ if ( ! function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
 }
 if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
     function woocommerce_get_product_thumbnail( $size = 'shop_catalog', $placeholder_width = 0, $placeholder_height = 0  ) {
-        global $post, $woocommerce;
-        $output = '<div class="imagewrapper">';
+        global $post, $woocommerce, $product;
+        $output = '<div class= "p-b-image">';
 
         if ( has_post_thumbnail() ) {
             $output .= get_the_post_thumbnail( $post->ID, $size );
-        }
-        $output .= '</div>';
-        return $output;
-    }
-} */
+		}
+		$weight = $product->get_weight();
+		if ( $product->has_weight() ) {
+			$output .= '<div class="p-b-weight">Вес: ' . $weight . ' г.' . '</div>';
+		$output .= '</div>';
+		}
+		return $output;
+	}
+}
 // меняем переход по ссылке к товару на изображение товара в категории
 // add_action ('woocommerce_before_shop_loop_item', 'custom_loop_product_link_open', 1);
 // function custom_loop_product_link_open(){
@@ -1079,3 +1109,32 @@ add_filter( 'woocommerce_get_price_html', function( $price ) {
 
 	return '';
 } );
+
+/*
+ * Remove "Add to Cart" button from the product category
+ */
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
+/**
+ * Show the product title in the product loop. By default this is an H4.
+ */
+function woocommerce_template_loop_product_title() {
+	echo '<h4 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h4>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+
+
+/**
+ * Show product weight on archive pages
+ */
+// add_action( 'woocommerce_shop_loop_item_title', 'rs_show_weights', 2 );
+
+// function rs_show_weights() {
+
+//     global $product;
+// 	$weight = $product->get_weight();
+// 	// $sku = $product->get_sku();
+
+//     if ( $product->has_weight() ) {
+// 		echo '<div class="p-b-weight">Вес: ' . $weight . ' г.' . '</div>';
+//     }
+// }
