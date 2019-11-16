@@ -1138,3 +1138,10 @@ function woocommerce_template_loop_product_title() {
 // 		echo '<div class="p-b-weight">Вес: ' . $weight . ' г.' . '</div>';
 //     }
 // }
+
+add_action( 'woocommerce_before_single_product_summary', 'back_link_at_product_page', 10 );
+function back_link_at_product_page() {
+	echo '<div class="col-md-12 text-center p-p-back">';
+    	echo '<a onclick="history.back();return false;">Вернуться назад</a>';
+    echo '</div>';
+	}
