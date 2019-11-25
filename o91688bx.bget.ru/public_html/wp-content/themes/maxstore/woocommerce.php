@@ -13,7 +13,7 @@
 
 	<!-- <div class="col-xs-12 col-sm-9 col-md-<?php maxstore_main_content_width(); ?> rsrc-main"> -->
 	<div class="col-xs-12 col-sm-12 col-md-12 rsrc-main">
-        <div class="woocommerce">
+		<div class="woocommerce">
 			<?php if ( get_theme_mod( 'woo-breadcrumbs', 0 ) != 0 ) : ?>
 				<?php woocommerce_breadcrumb(); ?>
 			<?php endif; ?>

@@ -164,11 +164,31 @@ function maxstore_widgets_init() {
 		'before_title'	 => '<h3 class="widget-title">',
 		'after_title'	 => '</h3>',
 	) );
-			register_sidebar(
+		register_sidebar(
 	array(
 		'name'			 => __( 'Footer Bottom Section', 'maxstore' ),
 		'id'			 => 'footer-bottom-area',
 		'description'	 => __( 'Нижний виджет в футере', 'maxstore' ),
+		'before_widget'	 => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
+	) );
+		register_sidebar(
+	array(
+		'name' 			=> __('Поиск', 'maxstore'),
+		'id' 			=> 'top-search-form',
+		'description' => __('Поиск в header', 'maxstore'),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+		register_sidebar(
+	array(
+		'name'			 => __( 'Top category menu', 'maxstore' ),
+		'id'			 => 'category-menu',
+		'description'	 => __( 'Категории меню', 'maxstore' ),
 		'before_widget'	 => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'	 => '</div>',
 		'before_title'	 => '<h3 class="widget-title">',
@@ -1060,7 +1080,7 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 if ( ! defined( 'WC_MAX_LINKED_VARIATIONS' ) ) {
     define( 'WC_MAX_LINKED_VARIATIONS', 90);
 }
-/* заключаем картинку в обертку */
+/* заключаем картинку в обертку  и добавляем отображение веса */
 
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
@@ -1080,7 +1100,7 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 		}
 		$weight = $product->get_weight();
 		if ( $product->has_weight() ) {
-			$output .= '<div class="p-b-weight">Вес: ' . $weight . ' г.' . '</div>';
+			$output .= '<div class="p-b-weight">' . $weight . 'г.' . '</div>';
 		$output .= '</div>';
 		}
 		return $output;
@@ -1139,9 +1159,40 @@ function woocommerce_template_loop_product_title() {
 //     }
 // }
 
+// Ссылка на каталог со страницы товаров
 add_action( 'woocommerce_before_single_product_summary', 'back_link_at_product_page', 10 );
 function back_link_at_product_page() {
 	echo '<div class="col-md-12 text-center p-p-back">';
     	echo '<a onclick="history.back();return false;">Вернуться назад</a>';
     echo '</div>';
-	}
+}
+// перенос отображения колличества товаров вниз
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
+add_action( 'woocommerce_after_shop_loop' , 'woocommerce_result_count', 20 );
+/* скпипт отображения верхнего меню категорий при прокрутке страницы*/
+function menu_add_script_to_footer(){
+    if( is_shop()||is_product_category() ) { ?>
+<script>
+/* top menu of categories products */
+jQuery( document ).ready( function ( $ ) {
+    $( ".category-menu" ).hide();
+    $( function () {
+        $( window ).scroll( function () {
+            if ( $( this ).scrollTop() > 120 ) {
+                $( '.category-menu' ).fadeIn(900);
+            } else {
+                $( '.category-menu' ).fadeOut(700);
+            }
+        } );
+    } );
+} );
+</script>
+<?php }
+}
+add_action( 'wp_footer', 'menu_add_script_to_footer' );
+/* отступ от админ панели сверху если пользователь это Я - администратор */
+if ( is_user_logged_in()&&is_super_admin() ) { ?>
+	<style type="text/css">
+	.category-menu {top: 35px !important;}
+	</style>
+	<?php } // end if ;

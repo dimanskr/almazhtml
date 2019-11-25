@@ -108,6 +108,27 @@
 		</nav>
 	</div>
 	<?php // endif; ?>
+	<?php if ( is_active_sidebar( 'top-search-form' ) ) : ?>
+
+	<div class="search">
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="search" class="">
+					<?php dynamic_sidebar( 'top-search-form' ); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php endif; ?>
+	<?php if ( is_active_sidebar( 'category-menu' ) ) : ?>
+	<div class="category-menu">
+		<div class="container">
+			<div class="bg">
+				<?php dynamic_sidebar( 'category-menu' ); ?>
+			</div>
+		</div>
+	</div>
+	<?php endif; ?>
 	<?php if ( get_theme_mod( 'search-bar-check', 1 ) == 1 && class_exists( 'WooCommerce' ) ) : ?>
 	<?php get_template_part( 'template-part', 'searchbar' ); ?>
 	<?php endif; ?>

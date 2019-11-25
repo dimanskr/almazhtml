@@ -37,15 +37,9 @@
 
 
 			endwhile;
-			?>
-		<div class="col-sm-12">
-			<div class="bal-box-next">
-				<?php
-						the_posts_pagination();
-					?>
-			</div>
-		</div>
-		<?php
+
+				the_posts_pagination();
+
 		else:
 
 		get_template_part( 'content', 'none' );
