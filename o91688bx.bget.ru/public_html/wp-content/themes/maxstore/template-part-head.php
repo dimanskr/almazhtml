@@ -8,33 +8,17 @@
 		$desc	 = 'h3';
 	}
 	?>
-	<?php if ( get_theme_mod( 'infobox-text-right', '' ) != '' || get_theme_mod( 'infobox-text-left', '' ) != '' ) : ?>
-	<div class="top-section row">
-		<!-- текст слева вверху где не будет пока ничего  -->
-		<div class="top-infobox text-left col-xs-4">
-			<?php
-				if ( get_theme_mod( 'infobox-text-left', '' ) != '' ) {
-					echo wp_kses_post( get_theme_mod( 'infobox-text-left' ) );
-				}
-				?>
-		</div>
-		<!-- виджет меню справа вверху где форма регистрации вместо текстбокса  -->
-		<div class="header-login text-right col-xs-8">
-			<?php if ( class_exists( 'WooCommerce' ) && get_theme_mod( 'my-account-link', 1 ) == 1 ) { // Login Register  ?>
-			<?php if ( is_user_logged_in() ) { ?>
-			<a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>"
-				title="<?php esc_attr_e( 'My Account', 'maxstore' ); ?>"><?php esc_html_e( 'My Account', 'maxstore' ); ?></a>
-			<?php } else { ?>
-			<a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>"
-				title="<?php esc_attr_e( 'Login / Register', 'maxstore' ); ?>"><?php esc_html_e( 'Login / Register', 'maxstore' ); ?></a>
-			<?php } ?>
-			<?php } ?>
-		</div>
-	</div>
-	<?php endif; ?>
 	<div class="row">
 		<?php // Site title/logo  ?>
-		<header id="site-header" class="col-sm-4 hidden-xs rsrc-header text-center col-sm-push-4" role="banner">
+		<!-- поле слева от логина где будет номер телефона вместо формы регистрации -->
+		<div class="top-infobox col-sm-4 col-xs-12">
+		<?php
+			if ( get_theme_mod( 'infobox-text-right', '' ) != '' ) {
+				echo wp_kses_post( get_theme_mod( 'infobox-text-right' ) );
+			}
+			?>
+		</div>
+		<header id="site-header" class="col-sm-4 col-xs-12 rsrc-header text-center" role="banner">
 			<?php if ( get_theme_mod( 'header-logo', '' ) != '' ) : ?>
 			<div class="rsrc-header-img">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img
@@ -52,17 +36,10 @@
 			</div>
 			<?php endif; ?>
 		</header>
-		<!-- поле слева от логина где будет номер телефона вместо формы регистрации -->
-		<div class="top-infobox col-sm-4 col-xs-8 col-sm-pull-4">
-			<?php
-				if ( get_theme_mod( 'infobox-text-right', '' ) != '' ) {
-					echo wp_kses_post( get_theme_mod( 'infobox-text-right' ) );
-				}
-				?>
-		</div>
+
 		<?php // Shopping Cart   ?>
 		<?php if ( function_exists( 'maxstore_header_cart' ) ) { ?>
-		<div class="header-cart text-right col-sm-4 col-xs-4">
+		<div class="header-cart text-right col-sm-4 col-xs-12">
 			<?php maxstore_header_cart(); ?> <br>
 		</div>
 		<?php } ?>
@@ -77,34 +54,26 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<header class="visible-xs-block" role="banner">
-					<?php if ( get_theme_mod( 'header-logo', '' ) != '' ) : ?>
-					<div class="rsrc-header-img menu-img text-left">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img
-								src="<?php echo esc_url( get_theme_mod( 'header-logo' ) ); ?>"
-								title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
-					</div>
-					<?php else : ?>
-					<div class="rsrc-header-text menu-text">
-						<<?php echo $heading ?> class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-								title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-								rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-						</<?php echo $heading ?>>
-					</div>
-					<?php endif; ?>
-				</header>
 			</div>
+			<div class="collapse navbar-collapse navbar-1-collapse">
 			<?php
 			wp_nav_menu( array(
 				'theme_location'	 => 'main_menu',
 				'depth'				 => 3,
-				'container'			 => 'div',
-				'container_class'	 => 'collapse navbar-collapse navbar-1-collapse',
+				'container'			 => false,
 				'menu_class'		 => 'nav navbar-nav',
 				'fallback_cb'		 => 'wp_bootstrap_navwalker::fallback',
 				'walker'			 => new wp_bootstrap_navwalker() )
 			);
+			wp_nav_menu( array(
+				'theme_location' 	 => 'registration',
+				'container'			 => false,
+				'menu_class'         => 'nav navbar-nav navbar-right',
+				'fallback_cb'		 => 'wp_bootstrap_navwalker::fallback',
+				'walker'			 => new wp_bootstrap_navwalker() )
+			);
 			?>
+			</div>
 		</nav>
 	</div>
 	<?php // endif; ?>
