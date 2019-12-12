@@ -172,7 +172,7 @@ table.vartable input.qty { text-align: right; }
     max-width: none;
   } */
 }
-/* скрыть отображение артикула на мобильной версии */
+/* скрыть отображение артикула на маленьких экранах */
 @media screen and (max-width: 991px) {
     .vartable_sku,
     .skucol{

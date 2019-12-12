@@ -402,9 +402,9 @@ if (!function_exists('maxstore_social_links')):
             'twp_social_rss' => 'rss',
         );
         ?>
-			<div class="social-links">
-				<ul>
-					<?php
+					<div class="social-links">
+						<ul>
+							<?php
     $i = 0;
         $twp_links_output = '';
         foreach ($twp_social_links as $key => $value) {
@@ -417,9 +417,9 @@ if (!function_exists('maxstore_social_links')):
         }
         echo $twp_links_output;
         ?>
-				</ul>
-			</div><!-- .social-links -->
-			<?php
+						</ul>
+					</div><!-- .social-links -->
+					<?php
     }
 
 endif;
@@ -870,7 +870,7 @@ function ws_new_user_send_email($user_id)
     ob_start();
 
     // создаем сообщение присоединяя к указанному файлу значения переменных
-    woocommerce_get_template('emails/customer-new-account-for-admin.php', array(
+    wc_get_template('emails/customer-new-account-for-admin.php', array(
         'user_email' => $user_email,
         'billing_first_name' => $billing_first_name,
         'billing_address_1' => $billing_address_1,
@@ -891,7 +891,7 @@ function ws_new_user_send_email($user_id)
     ob_start();
 
     // создание сообщения для пользователя
-    woocommerce_get_template('emails/customer-new-account-for-user.php', array(
+    wc_get_template('emails/customer-new-account-for-user.php', array(
         'user_email' => $user_email,
         'billing_first_name' => $billing_first_name,
         'blogname' => $blogname,
@@ -902,8 +902,8 @@ function ws_new_user_send_email($user_id)
     $message_for_user = ob_get_clean();
 
     // Отправка почты пользователю и администратору о регистрации
-    woocommerce_mail(get_bloginfo('admin_email'), $subject, $message_for_admin, $headers = "Content-Type: text/htmlrn", $attachments = "");
-    woocommerce_mail($user_email, $subject, $message_for_user, $headers = "Content-Type: text/htmlrn", $attachments = "");
+    wc_mail(get_bloginfo('admin_email'), $subject, $message_for_admin, $headers = "Content-Type: text/htmlrn", $attachments = "");
+    wc_mail($user_email, $subject, $message_for_user, $headers = "Content-Type: text/htmlrn", $attachments = "");
 
 }
 add_action('woocommerce_created_customer', 'ws_new_user_send_email', 10, 1);
@@ -934,7 +934,7 @@ function ws_new_user_approve_send_approved_email($user_id)
     ob_start();
 
     // форммирование сообщения из файла с использованием переменных
-    woocommerce_get_template('emails/customer-account-approved.php', array(
+    wc_get_template('emails/customer-account-approved.php', array(
         'user_email' => $user_email,
         'billing_first_name' => $billing_first_name,
         'blogname' => $blogname,
@@ -945,7 +945,7 @@ function ws_new_user_approve_send_approved_email($user_id)
     $message = ob_get_clean();
 
     // Send the mail
-    woocommerce_mail($user_email, $subject, $message, $headers = "Content-Type: text/htmlrn", $attachments = "");
+    wc_mail($user_email, $subject, $message, $headers = "Content-Type: text/htmlrn", $attachments = "");
 }
 add_action('new_user_approve_approve_user', 'ws_new_user_approve_send_approved_email', 10, 1);
 
@@ -955,6 +955,46 @@ function ws_new_user_approve_send_denied_email($user_id)
 }
 add_action('new_user_approve_deny_user', 'ws_new_user_approve_send_denied_email', 10, 1);
 
+/* редирект на главную после регистрации */
+add_filter( 'woocommerce_registration_redirect', 'custom_registration_redirect', 10, 1 );
+function custom_registration_redirect( $redirection_url ){
+    // Change the redirection Url
+    $redirection_url = get_home_url(); // Home page
+
+    return $redirection_url; // Always return something
+}
+/* Redirect to shop after login. */
+//Redirect users to custom URL based on their role after login
+function wp_woo_custom_redirect( $redirect, $user ) {
+
+    // Get the first of all the roles assigned to the user
+    $role = $user->roles[0];
+    $dashboard = admin_url();
+    $myaccount = get_permalink( wc_get_page_id( 'my-account' ) );
+
+    if( $role == 'administrator' ) {
+
+        //Redirect administrators to the dashboard
+        $admin_redirect = get_option('admin_redirect');
+        $redirect = $admin_redirect;
+    // } elseif ( $role == 'shop-manager' ) {
+
+    //     //Redirect shop managers to the dashboard
+    //     $shop_manager_redirect = get_option('shop_manager_redirect');
+    //     $redirect = $shop_manager_redirect;
+    // } elseif ( $role == 'customer' || $role == 'subscriber' ) {
+
+    //     //Redirect customers and subscribers to the "My Account" page
+    //     $customer_redirect = get_option('customer_redirect');
+    //     $redirect = $customer_redirect;
+    } else {
+
+        //Redirect any other role to the previous visited page or, if not available, to the home
+        $redirect = wp_get_referer() ? wp_get_referer() : home_url();
+    }
+    return $redirect;
+    }
+    add_filter( 'woocommerce_login_redirect', 'wp_woo_custom_redirect', 10, 2 );
 /**
  * * показать общий вес под корзиной и в письме
  */
