@@ -2015,7 +2015,7 @@ input#coupon_code {
 /*!!! Убираем название продукта внизу всплывающей картинки*/
 .pp_description,
 .ppt {
-    display: none !important;
+    /* display: none !important; */
 }
 
 /*!!! Убираем вес для ювелирной упаковки и демонстрационного оборудования
@@ -2583,7 +2583,7 @@ span.bellows-target-description {
 #add_payment_method table.cart img,
 .woocommerce-cart table.cart img,
 .woocommerce-checkout table.cart img {
-    width: auto;
+    width: 36px;
 }
 
 /* верхнеее меню */
@@ -2769,4 +2769,8 @@ form.register {
 .qtywrap{
     display: inline-flex;
 
+}
+/* скрываем ИТОГО в мини-корзине */
+.woocommerce-mini-cart__total{
+    display: none;
 }

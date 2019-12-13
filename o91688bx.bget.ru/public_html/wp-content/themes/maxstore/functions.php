@@ -402,9 +402,9 @@ if (!function_exists('maxstore_social_links')):
             'twp_social_rss' => 'rss',
         );
         ?>
-					<div class="social-links">
-						<ul>
-							<?php
+						<div class="social-links">
+							<ul>
+								<?php
     $i = 0;
         $twp_links_output = '';
         foreach ($twp_social_links as $key => $value) {
@@ -417,9 +417,9 @@ if (!function_exists('maxstore_social_links')):
         }
         echo $twp_links_output;
         ?>
-						</ul>
-					</div><!-- .social-links -->
-					<?php
+							</ul>
+						</div><!-- .social-links -->
+						<?php
     }
 
 endif;
@@ -956,8 +956,9 @@ function ws_new_user_approve_send_denied_email($user_id)
 add_action('new_user_approve_deny_user', 'ws_new_user_approve_send_denied_email', 10, 1);
 
 /* редирект на главную после регистрации */
-add_filter( 'woocommerce_registration_redirect', 'custom_registration_redirect', 10, 1 );
-function custom_registration_redirect( $redirection_url ){
+add_filter('woocommerce_registration_redirect', 'custom_registration_redirect', 10, 1);
+function custom_registration_redirect($redirection_url)
+{
     // Change the redirection Url
     $redirection_url = get_home_url(); // Home page
 
@@ -965,36 +966,37 @@ function custom_registration_redirect( $redirection_url ){
 }
 /* Redirect to shop after login. */
 //Redirect users to custom URL based on their role after login
-function wp_woo_custom_redirect( $redirect, $user ) {
+function wp_woo_custom_redirect($redirect, $user)
+{
 
     // Get the first of all the roles assigned to the user
     $role = $user->roles[0];
     $dashboard = admin_url();
-    $myaccount = get_permalink( wc_get_page_id( 'my-account' ) );
+    $myaccount = get_permalink(wc_get_page_id('my-account'));
 
-    if( $role == 'administrator' ) {
+    if ($role == 'administrator') {
 
         //Redirect administrators to the dashboard
         $admin_redirect = get_option('admin_redirect');
         $redirect = $admin_redirect;
-    // } elseif ( $role == 'shop-manager' ) {
+        // } elseif ( $role == 'shop-manager' ) {
 
-    //     //Redirect shop managers to the dashboard
-    //     $shop_manager_redirect = get_option('shop_manager_redirect');
-    //     $redirect = $shop_manager_redirect;
-    // } elseif ( $role == 'customer' || $role == 'subscriber' ) {
+        //     //Redirect shop managers to the dashboard
+        //     $shop_manager_redirect = get_option('shop_manager_redirect');
+        //     $redirect = $shop_manager_redirect;
+        // } elseif ( $role == 'customer' || $role == 'subscriber' ) {
 
-    //     //Redirect customers and subscribers to the "My Account" page
-    //     $customer_redirect = get_option('customer_redirect');
-    //     $redirect = $customer_redirect;
+        //     //Redirect customers and subscribers to the "My Account" page
+        //     $customer_redirect = get_option('customer_redirect');
+        //     $redirect = $customer_redirect;
     } else {
 
         //Redirect any other role to the previous visited page or, if not available, to the home
         $redirect = wp_get_referer() ? wp_get_referer() : home_url();
     }
     return $redirect;
-    }
-    add_filter( 'woocommerce_login_redirect', 'wp_woo_custom_redirect', 10, 2 );
+}
+add_filter('woocommerce_login_redirect', 'wp_woo_custom_redirect', 10, 2);
 /**
  * * показать общий вес под корзиной и в письме
  */
@@ -1297,3 +1299,14 @@ function top_menu_customize_css()
     <?php } // end if ;
 }
 add_action('wp_head', 'top_menu_customize_css');
+
+/**
+ * Code goes in theme functions.php.
+ */
+add_filter('woocommerce_get_order_item_totals', 'custom_woocommerce_get_order_item_totals');
+
+function custom_woocommerce_get_order_item_totals($totals)
+{
+    unset($totals['payment_method']);
+    return $totals;
+}
