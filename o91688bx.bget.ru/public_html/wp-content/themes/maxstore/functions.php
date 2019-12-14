@@ -1310,3 +1310,27 @@ function custom_woocommerce_get_order_item_totals($totals)
     unset($totals['payment_method']);
     return $totals;
 }
+
+// Account Edit Adresses: Reorder billing email and phone fields
+add_filter(  'woocommerce_billing_fields', 'custom_billing_fields', 20, 1 );
+function custom_billing_fields( $fields ) {
+    // Only on account pages
+    if( ! is_account_page() ) return $fields;
+/* убираем лишние поля на странице аккаунта клиента*/
+    unset($fields['billing_last_name']);
+    unset($fields['billing_postcode']);
+    unset($fields['billing_city']);
+    unset($fields['billing_state']);
+    unset($fields['billing_address_2']);
+    unset($fields['billing_country']);
+
+    /*сортировка и изменение размеров полей в кабинете пользователя */
+    $fields['billing_first_name']['class'] = array('form-row-full');
+    $fields['billing_address_1']['priority'] = 20;
+    $fields['billing_email']['priority'] = 30;
+    $fields['billing_email']['class'] = array('form-row-first');
+    $fields['billing_phone']['priority'] = 40;
+    $fields['billing_phone']['class'] = array('form-row-last');
+
+    return $fields;
+}

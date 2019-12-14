@@ -2,20 +2,30 @@
 style.css
 functions.php - это главный!
 css\bootstrap.css - в том числе .nav
+css\almaz.css
 footer.php
 sidebar-left.php
 content-page.php
 template-part-head.php
 woocommerce.php
 
-изменены файлы в woocommerce
+созданы файлы и папки в теме:
+includes\helpers.php
+includes\option-tree-functions.php - функции подключаемые через option tree
+option-tree\
+woocommerce\product-searchform.php
+woocommerce\global\quantity-input.php // уже убран на доработку
+woocommerce\myaccount\dashboard.php
+woocommerce\cart,checkout,emails,order,global,loop с многочисленными изменениями
+fonts\glyphicons-halflings-regular четыре штуки
+
+изменены файлы в плагине woocommerce
 includes\wc-account-functions.php в стр. 99 - изменение пунктов меню в личном кабинете
 includes\admin\settings\class-wc-settings-products.php в стр. 435- добавление единицы измерения г. (по другому перевести единицы измерения веса не получилось) *не менял
-includes\class-wc-form-handler.php в 210 стр. (в новой 248 стр.) убираем обязательность полей имени, фамилии, почты
+includes\class-wc-form-handler.php в 248 стр. (в новой 248 стр.) убираем обязательность полей имени, фамилии, почты
 	которые	убраны на странице смены пароля
 !!!* перенес в functions.php includes\wc-template-functions.php в строке 655 для перехода на картинку впростых товарах вместо перехода по ссылке
 
-// изменен файл в плагине woo-variations-table !!! этот плагин удален
 // woo-variations-table.php и таблица стилей плагина style.css
  изменен файл в ДРУГОМ плагине woo-variations-table-2
 // woo-variations-table.php
@@ -24,11 +34,15 @@ includes\class-wc-form-handler.php в 210 стр. (в новой 248 стр.) у
 templates\print-order\print-content.php, style.css
 includes\wcdn-template-functions.php
 
-созданы файлы и папки в теме:
-woocommerce\global\quantity-input.php // уже убран на доработку
-woocommerce\myaccount\dashboard.php
-woocommerce\cart,checkout,emails,order,global,loop с многочисленными изменениями
-fonts\glyphicons-halflings-regular четыре штуки
-xo 10-woocommerce-categories-widget\accordion-plain.css !!! удален
+изменены файлы в плагине Load More Products
+файл main.php
+изменены файлы в плагине New User Approve
 
 Sync: Загрузка Завершена. Gist ID: d33840c9c7804aea131c093acba7d497. Пожалуйста, скопируйте и используйте этот идентификатор на других устройствах для синхронизации настроек.
+
+не менять плагины:
+Woocommerce
+New User Approve
+WooCommerce Load More Products
+WooCommerce Печать счета-фактуры и доставки
+YaMaps - плагин Яндекс.Карт для WordPress
