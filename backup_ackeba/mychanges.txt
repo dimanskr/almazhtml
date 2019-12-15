@@ -36,7 +36,11 @@ includes\wcdn-template-functions.php
 
 изменены файлы в плагине Load More Products
 файл main.php
+
 изменены файлы в плагине New User Approve
+
+изменены файлы в плагине Advanced AJAX Product Filters for WooCommerce
+// Woocommerce-ajax-filter/css/widgets/css
 
 Sync: Загрузка Завершена. Gist ID: d33840c9c7804aea131c093acba7d497. Пожалуйста, скопируйте и используйте этот идентификатор на других устройствах для синхронизации настроек.
 
@@ -44,5 +48,7 @@ Sync: Загрузка Завершена. Gist ID: d33840c9c7804aea131c093acba7
 Woocommerce
 New User Approve
 WooCommerce Load More Products
+Advanced AJAX Product Filters for WooCommerce
+Woocommerce-ajax-filter
 WooCommerce Печать счета-фактуры и доставки
 YaMaps - плагин Яндекс.Карт для WordPress

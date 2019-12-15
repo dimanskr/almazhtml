@@ -22,7 +22,7 @@ body {
     border: none;
     border-radius: 5px;
     overflow: auto;
-    padding: 15px 0;
+    padding: 15px 0px;
 }
 
 #payment-method {
@@ -1218,14 +1218,18 @@ footer .btn {
     text-align: center;
 }
 
-.map {
+.map,
+.home-category-gold,
+.home-category-silver {
     margin: 0 auto;
     text-align: center;
 }
 
 .home-about h3,
 .kontakti-text h3,
-.map h3 {
+.map h3,
+.home-category-gold h3,
+.home-category-silver h3{
     font-size: 32px;
     margin: 0 auto;
     padding-top: 30px;

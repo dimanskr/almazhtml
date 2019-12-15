@@ -82,9 +82,9 @@ $table_prefix = 'wp_';
 *
 * @link https://codex.wordpress.org/Debugging_in_WordPress
 */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 define('WP_DEBUG_LOG', false);
-define('WP_DEBUG_DISPLAY', true);
+define('WP_DEBUG_DISPLAY', false);
 /* Это всё, дальше не редак;тируем. Успехов! */
 
 /** Абсолютный путь к директории WordPress. */

@@ -74,7 +74,8 @@ function maxstore_theme_stylesheets()
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.4', 'all');
     wp_enqueue_style('maxstore-stylesheet', get_stylesheet_uri(), array(), '1.5.0', 'all');
     // load Font Awesome css
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.7');
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.4.0');
+    //wp_enqueue_style( 'load-fa', 'https://kit.fontawesome.com/2496e52c54.js' );
     wp_enqueue_style('almaz-style', get_template_directory_uri() . '/css/almaz.css', array());
 
 }

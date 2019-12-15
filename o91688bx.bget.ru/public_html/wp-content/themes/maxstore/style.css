@@ -2586,6 +2586,14 @@ span.bellows-target-description {
     width: 36px;
 }
 
+@media only screen and (max-width: 767px) {
+    #add_payment_method table.cart img,
+    .woocommerce-cart table.cart img,
+    .woocommerce-checkout table.cart img {
+        width: 25%;
+    }
+}
+
 /* верхнеее меню */
 #menu-verhnee-menju {
     /* margin: 7.5px -15px; */
@@ -2753,24 +2761,64 @@ form.register {
 .input-group {
     margin: 0px 15px;
 }
+
 /* убираем каретку в навигационном меню */
-.caret{
+.caret {
     display: none;
 }
+
 /* убираем top-section */
-.top-section{
+.top-section {
     display: none;
 }
+
 /* Заголовки таблицы вариаций п оцентру */
-.product_variations_table > thead > tr > th{
+.product_variations_table>thead>tr>th {
     text-align: center;
 }
+
 /* Отображение счетчика товаров посередине */
-.qtywrap{
+.qtywrap {
     display: inline-flex;
 
 }
+
 /* скрываем ИТОГО в мини-корзине */
-.woocommerce-mini-cart__total{
+.woocommerce-mini-cart__total {
+    display: none;
+}
+
+/* отступы для фильтра из плагина woocommerce-ajax-filter */
+.berocket_aapf_widget-title_div {
+    margin: 0px 15px;
+}
+
+ul.berocket_aapf_widget {
+    margin: 0px 15px;
+    padding: 0px;
+}
+
+ul.berocket_aapf_widget label {
+    padding-left: 1em;
+}
+
+ul.berocket_aapf_widget .br_child_toggle {
+    padding-left: 1em;
+}
+
+.berocket_aapf_widget_show{
+    position: relative;
+    float: left;
+    margin-top: -0.25em;
+}
+
+/* уменьшаем размер поля ввода кол-ва товаров в корзине */
+@media only screen and (max-width: 991px) {
+    .woocommerce-cart-form__cart-item .qty {
+        width: 1.631em !important;
+    }
+}
+/* прячем показные категории на главной */
+.home-category-almaz{
     display: none;
 }
