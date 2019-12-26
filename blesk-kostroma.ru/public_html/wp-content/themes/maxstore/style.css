@@ -1972,26 +1972,26 @@ input#coupon_code {
 .image-silver-front,
 .image-oborudovanie-front,
 .image-upakovka-front {
-    /* padding-bottom: 15px; */
+    padding-bottom: 15px;
 }
 
 .image-silver-front h3,
 .image-oborudovanie-front h3,
 .image-upakovka-front h3 {
-    /* position: absolute;
+    position: absolute;
     top: 5px;
-    left: 15% */
+    left: 15%
 }
 
 .image-silver-front h3>span,
 .image-oborudovanie-front h3>span,
 .image-upakovka-front h3>span {
-    /* color: #000000;
+    color: #000000;
     font-size: 13px;
     line-height: 40px;
-    background: rgba(255, 255, 255, 0.8); */
+    background: rgba(255, 255, 255, 0.8);
     /* background: #000; */
-    /* padding: 10px 10px 10px 10px; */
+    padding: 10px 10px 10px 10px;
 }
 
 /* отступы снизу меню регистрации, нижнего меню, корзины, телефона */
@@ -2657,7 +2657,7 @@ input[type=number]::-webkit-outer-spin-button {
 .plusqty {
     border-radius: 3px;
     /* border: 1px solid #00d1b2; */
-    background-color: #fafafa;
+    background-color: #fff;
 }
 
 .qtywrap {
@@ -2719,6 +2719,18 @@ h2.woocommerce-loop-category__title .count {
 .woocommerce nav.woocommerce-pagination ul li a,
 .woocommerce nav.woocommerce-pagination ul li span {
     font-size: 1.5em;
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+    border: 0px;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+    border: 0px;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current {
+    color: #333333;
 }
 
 /* Возможность пролистывать сайт нажимая на картинку */
@@ -2823,32 +2835,4 @@ ul.berocket_aapf_widget .br_child_toggle {
 /* прячем показные категории на главной */
 .home-category-almaz {
     display: none;
-}
-
-/* Flexbox on WooCommerce archive products */
-.woocommerce .products ul,
-.woocommerce ul.products {
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.woocommerce ul.products li.product,
-.woocommerce-page ul.products li.product {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.woocommerce ul.products li.product .button {
-    margin-top: auto;
-    display: table;
-}
-/* кнопка на странице заказа товаров с одной вариацией */
-.globalcartbtn{
-    float: left !important;
-}
-table.vartable input.qty{
-    text-align: center !important;
-}
-.product_variations_table{
-    background-color: #fafafa;
 }
