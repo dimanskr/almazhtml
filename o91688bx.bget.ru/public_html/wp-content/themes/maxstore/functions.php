@@ -403,9 +403,9 @@ if (!function_exists('maxstore_social_links')):
             'twp_social_rss' => 'rss',
         );
         ?>
-						<div class="social-links">
-							<ul>
-								<?php
+							<div class="social-links">
+								<ul>
+									<?php
     $i = 0;
         $twp_links_output = '';
         foreach ($twp_social_links as $key => $value) {
@@ -418,9 +418,9 @@ if (!function_exists('maxstore_social_links')):
         }
         echo $twp_links_output;
         ?>
-							</ul>
-						</div><!-- .social-links -->
-						<?php
+								</ul>
+							</div><!-- .social-links -->
+							<?php
     }
 
 endif;
@@ -1168,7 +1168,7 @@ echo '<a target="_blank" href="' . get_the_permalink() . '" class="woocommerce-L
 //     echo '</div><!-- /loop_product-->';
 // }
 /* удаляем похожие товары на странице товара */
-remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+// remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 /* разрешаем создавать 90 вариаций товара */
 if (!defined('WC_MAX_LINKED_VARIATIONS')) {
@@ -1313,10 +1313,14 @@ function custom_woocommerce_get_order_item_totals($totals)
 }
 
 // Account Edit Adresses: Reorder billing email and phone fields
-add_filter(  'woocommerce_billing_fields', 'custom_billing_fields', 20, 1 );
-function custom_billing_fields( $fields ) {
+add_filter('woocommerce_billing_fields', 'custom_billing_fields', 20, 1);
+function custom_billing_fields($fields)
+{
     // Only on account pages
-    if( ! is_account_page() ) return $fields;
+    if (!is_account_page()) {
+        return $fields;
+    }
+
 /* убираем лишние поля на странице аккаунта клиента*/
     unset($fields['billing_last_name']);
     unset($fields['billing_postcode']);
@@ -1336,3 +1340,36 @@ function custom_billing_fields( $fields ) {
     return $fields;
 }
 //add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+/* функция кросселов в карточке товара*/
+function woo_cross_sell_display_single_product( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
+
+    global $product;
+
+	$cross_sells = array_filter( array_map( 'wc_get_product', $product->get_cross_sell_ids() ), 'wc_products_array_filter_visible' );
+
+	wc_set_loop_prop( 'name', 'cross-sells' );
+	wc_set_loop_prop( 'columns', apply_filters( 'woocommerce_cross_sells_columns', $columns ) );
+
+	// Handle orderby and limit results.
+	$orderby     = apply_filters( 'woocommerce_cross_sells_orderby', $orderby );
+	$order       = apply_filters( 'woocommerce_cross_sells_order', $order );
+	$cross_sells = wc_products_array_orderby( $cross_sells, $orderby, $order );
+	$limit       = apply_filters( 'woocommerce_cross_sells_total', $limit );
+	$cross_sells = $limit > 0 ? array_slice( $cross_sells, 0, $limit ) : $cross_sells;
+
+	wc_get_template(
+		'single-product/cross-sells.php',
+		array(
+			'cross_sells'    => $cross_sells,
+
+			// Not used now, but used in previous version of up-sells.php.
+			'posts_per_page' => $limit,
+			'orderby'        => $orderby,
+			'columns'        => $columns,
+		)
+	);
+}
+add_action('woocommerce_product_thumbnails', 'woo_cross_sell_display_single_product', 19); //19 потому что мне нужно что бы выводилось перед похожими товарами т.е. Апселлы.
+//  удаляем отображение тегов, категорий и т.д. на странице товара
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );

@@ -1236,7 +1236,8 @@ footer .btn {
 .kontakti-text h3,
 .map h3,
 .home-category-gold h3,
-.home-category-silver h3{
+.home-category-silver h3,
+.cross-sells h3{
     font-size: 32px;
     margin: 0 auto;
     padding-top: 30px;

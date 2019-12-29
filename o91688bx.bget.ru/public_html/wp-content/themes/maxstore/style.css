@@ -2650,20 +2650,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: 30px !important;
 }
 
-/* размеры инпутов с + и - для простых товаров */
-.minus,
-.plus,
-.minusqty,
-.plusqty {
-    border-radius: 3px;
-    /* border: 1px solid #00d1b2; */
-    background-color: #fafafa;
-}
-
-.qtywrap {
-    background-color: #fff !important;
-}
-
 /* свойства кнопки увеличения товара в каталоге */
 /* .quickview{
 	display: inline-block;
@@ -2825,24 +2811,20 @@ ul.berocket_aapf_widget .br_child_toggle {
     display: none;
 }
 
-/* Flexbox on WooCommerce archive products */
-.woocommerce .products ul,
-.woocommerce ul.products {
-    display: flex;
-    flex-flow: row wrap;
+/* размеры инпутов с + и - для простых товаров */
+.minus,
+.plus,
+.minusqty,
+.plusqty {
+    border-radius: 3px;
+    /* border: 1px solid #00d1b2; */
+    /* background-color: #fafafa; */
+}
+.qtywrap {
+    background-color: #fafafa !important;
 }
 
-.woocommerce ul.products li.product,
-.woocommerce-page ul.products li.product {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.woocommerce ul.products li.product .button {
-    margin-top: auto;
-    display: table;
-}
-/* кнопка на странице заказа товаров с одной вариацией */
+/* кнопка на странице заказа товаров с одним атрибутом для вариации */
 .globalcartbtn{
     float: left !important;
 }

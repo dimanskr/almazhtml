@@ -1,7 +1,6 @@
 <?php
 /** Enable W3 Total Cache */
 //Added by WP-Cache Manager
-
 /**
 * Основные параметры WordPress.
 *
@@ -20,29 +19,21 @@
 *
 * @package WordPress
 */
-
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'o91688bx_blesk');
-
+define('DB_NAME', 'o91688bx_silver');
 /** Имя пользователя MySQL */
-define('DB_USER', 'o91688bx_blesk');
-
+define('DB_USER', 'o91688bx_silver');
 /** Пароль к базе данных MySQL */
 define('DB_PASSWORD', '28jan1984');
-
 /** Имя сервера MySQL */
 define('DB_HOST', 'localhost');
-
 /** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8mb4');
-
 /** Схема сопоставления. Не меняйте, если не уверены. */
 define('DB_COLLATE', '');
-
 /** Увеличение памяти для сайта до 64М. */
 define( 'WP_MEMORY_LIMIT', '128M' );
-
 /**#@+
 * Уникальные ключи и соли для аутентификации.
 *
@@ -52,17 +43,15 @@ define( 'WP_MEMORY_LIMIT', '128M' );
 *
 * @since 2.6.0
 */
-define('AUTH_KEY', 'z/fcSPqFVgewjBcY5WsP56KRYEdFLDSMaYa02PexWd3+Fa/aeOAI2z/0oYvvSU5/');
-define('SECURE_AUTH_KEY', '48fldz3xtNm5yFnOyjfjy2alWDtUrsUKBaYKo9OR+ZExL+8hewOzFAM5w0PGwfZc');
-define('LOGGED_IN_KEY', 'KuvOB5m4ZgEG2TPVnj3YADXTFSOXKyYqkY+nZsb5CQ7IOXM8VM0F7ZmV3d7MMYGj');
-define('NONCE_KEY', '/C41KRpvJKJaXRZqaCZQEV7vEYPKcHsMsKcPfZS9yrx34PP3xyjO0AuD4ao0rqwa');
-define('AUTH_SALT', 'AabMuc1/DD0LyTdP/XrrJxdYay3O2wBlSNhebvHFsJFZx3yUkShw4qbmozz43el6');
-define('SECURE_AUTH_SALT', 'tQN3Aq4fdbQeMQZ1SOrS/GeEgIHPCbmDRCaoaIs6z2CPVH4avErQ6Dhnvrp2MnfF');
-define('LOGGED_IN_SALT', 'i0oyi2B3GGXBBeXeOx7VaKOJBBUgrfkz/6sceDWIZlNSIGCufJGzKLvWpiUN9OLG');
-define('NONCE_SALT', 'DQUDr9BGb/Pzq9nyyyzh/tkPGGwUviDFavWW7glqDPjnCBGT0YQwrjBFxF+3Qlhm');
-
+define('AUTH_KEY', 'bKxzbbVcGNZPWeXrd7PlBg7xvc19PTs8qI0BMw5lXuh6DqHe8GYwuZQaoiXEesTs');
+define('SECURE_AUTH_KEY', 'jC3F9n5nwuSWyRDLoEuVEy2iqvjd0swBdF/5UJaJ3By8c8QygtgMIrgUoAdnb5oT');
+define('LOGGED_IN_KEY', 'W0xFoc2HJV0++qCyxaEnXw4s89CW/c0af5PCtfyoQWKyeNxfuJJx9PykEKgg3JSW');
+define('NONCE_KEY', 'wwmZiZS5wj2h9RXLchWZOJryW7KRwNZo1YDEEqFRrjYe0CcNnX26eIfnX2hMDiHD');
+define('AUTH_SALT', '2odtWe7h37LTwivtfIZcuZfZ54h0/2HL2ZQtv9HZRY2a1k5epSKKk8j8tcxwf4Ft');
+define('SECURE_AUTH_SALT', '2xYl9oQbj1nUV4fIsUgmqU/k0NXhpufKLTwX6kTstww854ftFgvj2l/eF48k1W8r');
+define('LOGGED_IN_SALT', 'Lze6a0VgyEmE9N8R9tCyDSarUDDBEbE1sUPgXRUlzSi2WTQTw3kV9GiW8RAOpO5B');
+define('NONCE_SALT', 'UhhlNPDx8a2zMzLxEpYhWj4kIuNc1KdaP+NJx7KKFyeid2DsRuc8BtWul3AvMMAk');
 /**#@-*/
-
 /**
 * Префикс таблиц в базе данных WordPress.
 *
@@ -70,7 +59,6 @@ define('NONCE_SALT', 'DQUDr9BGb/Pzq9nyyyzh/tkPGGwUviDFavWW7glqDPjnCBGT0YQwrjBFxF
 * разные префиксы. Пожалуйста, указывайте только цифры, буквы и знак подчеркивания.
 */
 $table_prefix = 'wp_';
-
 /**
 * Для разработчиков: Режим отладки WordPress.
 *
@@ -82,14 +70,12 @@ $table_prefix = 'wp_';
 *
 * @link https://codex.wordpress.org/Debugging_in_WordPress
 */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 define('WP_DEBUG_LOG', false);
-define('WP_DEBUG_DISPLAY', true);
+define('WP_DEBUG_DISPLAY', false);
 /* Это всё, дальше не редак;тируем. Успехов! */
-
 /** Абсолютный путь к директории WordPress. */
 if ( !defined('ABSPATH') )
 define('ABSPATH', dirname(__FILE__) . '/');
-
 /** Инициализирует переменные WordPress и подключает файлы. */
 require_once(ABSPATH . 'wp-settings.php');

@@ -1335,3 +1335,36 @@ function custom_billing_fields( $fields ) {
 
     return $fields;
 }
+
+/* функция кросселов в карточке товара*/
+function woo_cross_sell_display_single_product( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
+
+    global $product;
+
+	$cross_sells = array_filter( array_map( 'wc_get_product', $product->get_cross_sell_ids() ), 'wc_products_array_filter_visible' );
+
+	wc_set_loop_prop( 'name', 'cross-sells' );
+	wc_set_loop_prop( 'columns', apply_filters( 'woocommerce_cross_sells_columns', $columns ) );
+
+	// Handle orderby and limit results.
+	$orderby     = apply_filters( 'woocommerce_cross_sells_orderby', $orderby );
+	$order       = apply_filters( 'woocommerce_cross_sells_order', $order );
+	$cross_sells = wc_products_array_orderby( $cross_sells, $orderby, $order );
+	$limit       = apply_filters( 'woocommerce_cross_sells_total', $limit );
+	$cross_sells = $limit > 0 ? array_slice( $cross_sells, 0, $limit ) : $cross_sells;
+
+	wc_get_template(
+		'single-product/cross-sells.php',
+		array(
+			'cross_sells'    => $cross_sells,
+
+			// Not used now, but used in previous version of up-sells.php.
+			'posts_per_page' => $limit,
+			'orderby'        => $orderby,
+			'columns'        => $columns,
+		)
+	);
+}
+add_action('woocommerce_product_thumbnails', 'woo_cross_sell_display_single_product', 19); //19 потому что мне нужно что бы выводилось перед похожими товарами т.е. Апселлы.
+//  удаляем отображение тегов, категорий и т.д. на странице товара
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );

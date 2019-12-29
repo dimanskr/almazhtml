@@ -486,11 +486,13 @@ header {
     cursor: pointer;
 }
 
-.p-p-title h1 {
+.p-p-title h1,
+h1.product_title,
+h1.page-title {
     font-size: 32px;
-    max-width: 60%;
+    /* max-width: 60%; */
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 10px;
     font-family: MinionPro-Regular;
     color: #444;
     text-transform: uppercase;
@@ -1229,7 +1231,8 @@ footer .btn {
 .kontakti-text h3,
 .map h3,
 .home-category-gold h3,
-.home-category-silver h3{
+.home-category-silver h3,
+.cross-sells h3{
     font-size: 32px;
     margin: 0 auto;
     padding-top: 30px;
