@@ -21,7 +21,7 @@ if ( $cross_sells ) : ?>
 
 	<div class="cross-sells">
 
-		<h3><?php esc_html_e( 'Комплект', 'woocommerce' ); ?></h3>
+		<h3><?php esc_html_e( 'С этим товаром заказывают', 'woocommerce' ); ?></h3>
 
 		<?php woocommerce_product_loop_start(); ?>
 
