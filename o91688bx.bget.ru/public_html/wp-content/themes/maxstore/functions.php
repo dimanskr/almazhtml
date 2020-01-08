@@ -403,9 +403,9 @@ if (!function_exists('maxstore_social_links')):
             'twp_social_rss' => 'rss',
         );
         ?>
-							<div class="social-links">
-								<ul>
-									<?php
+								<div class="social-links">
+									<ul>
+										<?php
     $i = 0;
         $twp_links_output = '';
         foreach ($twp_social_links as $key => $value) {
@@ -418,9 +418,9 @@ if (!function_exists('maxstore_social_links')):
         }
         echo $twp_links_output;
         ?>
-								</ul>
-							</div><!-- .social-links -->
-							<?php
+									</ul>
+								</div><!-- .social-links -->
+								<?php
     }
 
 endif;
@@ -1342,34 +1342,56 @@ function custom_billing_fields($fields)
 //add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 /* функция кросселов в карточке товара*/
-function woo_cross_sell_display_single_product( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
+function woo_cross_sell_display_single_product($limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc')
+{
 
     global $product;
 
-	$cross_sells = array_filter( array_map( 'wc_get_product', $product->get_cross_sell_ids() ), 'wc_products_array_filter_visible' );
+    // встроенная функция проверки принадлежности к комплекту или "с этим товаром заказывают"
+    $complect = false;
+    if (function_exists('ot_get_option')) {
+        /* get an array of page id's */
+        $complect_IDs = ot_get_option('id_categories', array());
+        // $complect_IDs = array(152, 154);
+        $categories = $product->get_category_ids();
+        foreach ($categories as $category) {
+            foreach ($complect_IDs as $complect_ID) {
+                if ($category == $complect_ID) {
+                    $complect = true;
+                }
+            }
+        }
+    }
 
-	wc_set_loop_prop( 'name', 'cross-sells' );
-	wc_set_loop_prop( 'columns', apply_filters( 'woocommerce_cross_sells_columns', $columns ) );
+    $cross_sells = array_filter(array_map('wc_get_product', $product->get_cross_sell_ids()), 'wc_products_array_filter_visible');
 
-	// Handle orderby and limit results.
-	$orderby     = apply_filters( 'woocommerce_cross_sells_orderby', $orderby );
-	$order       = apply_filters( 'woocommerce_cross_sells_order', $order );
-	$cross_sells = wc_products_array_orderby( $cross_sells, $orderby, $order );
-	$limit       = apply_filters( 'woocommerce_cross_sells_total', $limit );
-	$cross_sells = $limit > 0 ? array_slice( $cross_sells, 0, $limit ) : $cross_sells;
+    wc_set_loop_prop('name', 'cross-sells');
+    wc_set_loop_prop('columns', apply_filters('woocommerce_cross_sells_columns', $columns));
 
-	wc_get_template(
-		'single-product/cross-sells.php',
-		array(
-			'cross_sells'    => $cross_sells,
+    // Handle orderby and limit results.
+    $orderby = apply_filters('woocommerce_cross_sells_orderby', $orderby);
+    $order = apply_filters('woocommerce_cross_sells_order', $order);
+    $cross_sells = wc_products_array_orderby($cross_sells, $orderby, $order);
+    $limit = apply_filters('woocommerce_cross_sells_total', $limit);
+    $cross_sells = $limit > 0 ? array_slice($cross_sells, 0, $limit) : $cross_sells;
 
-			// Not used now, but used in previous version of up-sells.php.
-			'posts_per_page' => $limit,
-			'orderby'        => $orderby,
-			'columns'        => $columns,
-		)
-	);
+    wc_get_template(
+        'single-product/cross-sells.php',
+        array(
+            'cross_sells' => $cross_sells,
+            'complect' => $complect,
+
+            // Not used now, but used in previous version of up-sells.php.
+            'posts_per_page' => $limit,
+            'orderby' => $orderby,
+            'columns' => $columns,
+        )
+    );
 }
 add_action('woocommerce_product_thumbnails', 'woo_cross_sell_display_single_product', 19); //19 потому что мне нужно что бы выводилось перед похожими товарами т.е. Апселлы.
 //  удаляем отображение тегов, категорий и т.д. на странице товара
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+// удалить название продукта справа от продукта
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+// добавить название товара на странице товара над изображением
+add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 15);

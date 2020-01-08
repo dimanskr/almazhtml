@@ -20,9 +20,11 @@ defined( 'ABSPATH' ) || exit;
 if ( $cross_sells ) : ?>
 
 	<div class="cross-sells">
-
+	<?php if( $complect ) :?>
+		<h3><?php esc_html_e( 'Комплект', 'woocommerce' ); ?></h3>
+	<?php else : ?>
 		<h3><?php esc_html_e( 'С этим товаром заказывают', 'woocommerce' ); ?></h3>
-
+	<?php endif; ?>
 		<?php woocommerce_product_loop_start(); ?>
 
 			<?php foreach ( $cross_sells as $cross_sell ) : ?>
