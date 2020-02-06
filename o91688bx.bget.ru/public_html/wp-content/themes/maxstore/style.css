@@ -804,9 +804,9 @@ article.featured-article {
 }
 
 .btn-primary.outline {
-    border: 2px solid #00d1b2;
-    color: #00d1b2;
-    border-radius: 0;
+    /* border: 2px solid #00d1b2; */
+    /* color: #00d1b2; */
+    border-radius: 3px;
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
@@ -2833,4 +2833,11 @@ table.vartable input.qty{
 }
 .product_variations_table{
     background-color: #fafafa;
+}
+/* изменение цветов информационных сообщений woocommerce */
+.woocommerce-info{
+    border-top: 0px;
+}
+.woocommerce-info::before{
+    color: #777;
 }

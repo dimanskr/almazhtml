@@ -36,6 +36,7 @@ if ( ! function_exists( 'get_vd' ) ) {
 		}
 	}
 }
+// использование get_vd( $complect_IDs, false );
 
 
 if ( ! function_exists( 'get_num_ending' ) ) {
@@ -66,7 +67,7 @@ if ( ! function_exists( 'get_num_ending' ) ) {
 					$ending = $ending_array[2];
 			}
 		}
-		
+
 		return $ending;
 	}
 }

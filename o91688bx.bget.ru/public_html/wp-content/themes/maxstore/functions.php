@@ -403,9 +403,9 @@ if (!function_exists('maxstore_social_links')):
             'twp_social_rss' => 'rss',
         );
         ?>
-								<div class="social-links">
-									<ul>
-										<?php
+									<div class="social-links">
+										<ul>
+											<?php
     $i = 0;
         $twp_links_output = '';
         foreach ($twp_social_links as $key => $value) {
@@ -418,9 +418,9 @@ if (!function_exists('maxstore_social_links')):
         }
         echo $twp_links_output;
         ?>
-									</ul>
-								</div><!-- .social-links -->
-								<?php
+										</ul>
+									</div><!-- .social-links -->
+									<?php
     }
 
 endif;
@@ -1395,3 +1395,88 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 // добавить название товара на странице товара над изображением
 add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 15);
+
+// Hide products from a specific product category and for unlogged users only
+add_filter('woocommerce_product_query_tax_query', 'exclude_products_fom_unlogged_users', 10, 2);
+function exclude_products_fom_unlogged_users($tax_query, $query)
+{
+    // On frontend for unlogged users
+    if (!is_user_logged_in()) {
+        $tax_query[] = array(
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => array('goldpendants'), // <=== HERE the product category slug
+            'operator' => 'NOT IN',
+        );
+    }
+    return $tax_query;
+}
+/* функция вывода сообщения при выводе категорий товаров закрытых от незарегистрированных пользователей */
+add_action('woocommerce_no_products_found', 'remove_wc_no_products_found', 1);
+function remove_wc_no_products_found()
+{
+    if (is_product_category('goldpendants')) {
+        remove_action('woocommerce_no_products_found', 'wc_no_products_found');
+        add_action('woocommerce_no_products_found', 'message_for_unregistered');
+    }
+}
+
+if (!function_exists('message_for_unregistered')) {
+
+    /**
+     * Шаблон вывода сообщения: "Авторизуйтесь для просмотра данной категории товара."
+     * при выводе категорий товаров закрытых от незарегистрированных пользователей.
+     */
+    function message_for_unregistered()
+    {
+        wc_get_template('loop/message-for-unregistered.php');
+    }
+}
+/* функция отображения страниц woocommerce*/
+function woocommerce_content()
+{
+    /* перменая определения ID картинки баннера */
+    global $wp_query;
+    $cat_id = $wp_query->queried_object->term_id;
+    $term_options = get_option("taxonomy_term_$cat_id");
+
+    if (is_singular('product')) {
+
+        while (have_posts()):
+            the_post();
+            wc_get_template_part('content', 'single-product');
+        endwhile;
+
+    } else {
+
+        /* Отображение заголовка если он имеется  и если нет баннера, иначе отображение заголоввка в баннере в плагине woocommerce-category-banner */
+        if (apply_filters('woocommerce_show_page_title', true) && $term_options['banner_url_id'] == ''): ?>
+            <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title();?></h1>
+        <?php endif;?>
+
+        <?php do_action('woocommerce_archive_description');?>
+
+        <?php if (woocommerce_product_loop()): ?>
+
+            <?php do_action('woocommerce_before_shop_loop');?>
+
+            <?php woocommerce_product_loop_start();?>
+
+            <?php if (wc_get_loop_prop('total')): ?>
+                <?php while (have_posts()): ?>
+                    <?php the_post();?>
+                    <?php wc_get_template_part('content', 'product');?>
+                <?php endwhile;?>
+            <?php endif;?>
+
+            <?php woocommerce_product_loop_end();?>
+
+            <?php do_action('woocommerce_after_shop_loop');?>
+
+            <?php
+else:
+            do_action('woocommerce_no_products_found');
+        endif;
+        do_action('woocommerce_after_main_content');
+    }
+}

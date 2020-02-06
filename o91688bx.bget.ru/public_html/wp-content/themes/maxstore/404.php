@@ -10,16 +10,16 @@
 
 	<div class="col-md-<?php maxstore_main_content_width(); ?> rsrc-main">
 		<div class="error-template text-center">
-			<h1><?php esc_html_e( 'Oops!', 'maxstore' ); ?></h1>
-			<h2><?php esc_html_e( '404 Not Found', 'maxstore' ); ?></h2>
+			<h1><?php esc_html_e( 'Внимание!', 'maxstore' ); ?></h1>
+			<h2><?php esc_html_e( 'Ошибка 404', 'maxstore' ); ?></h2>
 			<div class="error-details">
-				<p><?php esc_html_e( 'Sorry, an error has occured, Requested page not found!', 'maxstore' ); ?></p> 
+				<p><?php esc_html_e( 'Извините, возникла ошибка. Запрашиваемая страница не найдена!', 'maxstore' ); ?></p>
 			</div>
-			<p>                                      
+			<p>
 				<a class="btn btn-primary btn-md outline" href="<?php echo esc_url( home_url( '/' ) ); ?>" >
-                    <span class="fa fa-home"></span><?php esc_html_e( ' Take Me Home', 'maxstore' ); ?> 
-				</a>                                  
-			</p> 
+                    <span class="fa fa-home"></span><?php esc_html_e( ' На главную', 'maxstore' ); ?>
+				</a>
+			</p>
 		</div>
 	</div>
 
